@@ -16,6 +16,7 @@
 }
 
 #hamburger {
+  top: 50px;
   position: absolute;
   width: 40px;
   transform: scale(1);
