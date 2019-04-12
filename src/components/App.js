@@ -6,15 +6,23 @@ class App extends Component {
     menu: true,
   }
 
-  toggleMenu = () => {
+  toggleMenu = (e) => {
+    e.stopPropagation()
     this.setState({
       menu: !this.state.menu,
     })
   }
 
+  closeMenu = (e) => {
+    e.stopPropagation()
+    this.setState({
+      menu: false,
+    })
+  }
+
   render() {
     return (
-      <div className='app'>
+      <div className='app' onClick={this.closeMenu}>
         <div className='navbar'>
           <div className='menu-icon'>
             <img
@@ -33,8 +41,10 @@ class App extends Component {
             />
           </div>
         </div>
-        <h3> Yuva Chang </h3>
-        <img className='image' id='headshot' src='favicon.ico' alt='wtf' />
+        <div >
+          <h3> Yuva Chang </h3>
+          <img className='image' id='headshot' src='favicon.ico' alt='wtf' />
+        </div>
         <Menu toggleMenu={this.toggleMenu} visible={this.state.menu} />
       </div>
     )
