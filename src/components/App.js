@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className='app'>
         <div className='navbar'>
-          <container className='menu-icon'>
+          <div className='menu-icon'>
             <img
               src={'../images/close.svg'}
               alt='image not found'
@@ -24,7 +24,6 @@ class App extends Component {
               className={this.state.menu ? '' : 'hidden'}
               onClick={this.toggleMenu}
             />
-
             <img
               src={'../images/hamburger.svg'}
               alt='image not found'
@@ -32,11 +31,10 @@ class App extends Component {
               className={this.state.menu ? 'hidden' : ''}
               onClick={this.toggleMenu}
             />
-          </container>
+          </div>
         </div>
         <h3> Yuva Chang </h3>
         <img className='image' id='headshot' src='favicon.ico' alt='wtf' />
-
         <Menu toggleMenu={this.toggleMenu} visible={this.state.menu} />
       </div>
     )
