@@ -15,11 +15,13 @@
   border-radius: 50%;
   transition: 0.5s;
 }
-
-#headshot.closed-menu:hover {
-  transform: scale(0.9);
-  cursor: pointer;
+@media (hover: hover) {
+  #headshot.closed-menu:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+  }
 }
+
 
 .headshot-div {
   filter: grayscale(100%);
@@ -41,7 +43,7 @@
   width: 250px;
   margin: 10px 0px -10px;
   z-index: -11;
-  opacity: 1;
+  opacity: 0;
   transition: 1s ease-in;
   transition-delay: 0.2s;
 }
@@ -180,8 +182,7 @@ img.image:hover {
   }
 
   #headshot:active {
-    width: 80px;
-    height: 80px;
+    transform: scale(0.9);
     cursor: pointer;
     transition: 0.12s;
   }
@@ -208,6 +209,12 @@ img.image:hover {
     text-align: center;
     padding-top: 1em;
   }
+
+  .photo-thumb:active {
+    transform: scale(0.9);
+    filter: grayscale(0.5);
+    transition: 0.1s;
+  }
 }
 
 #resume {
@@ -222,4 +229,59 @@ img.image:hover {
   margin-top: -1em;
   max-width: 1000px;
   align-self: center;
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 5em 10vw;
+}
+
+.image-container-square {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  margin: 10px;
+  position: relative;
+}
+
+.photo-thumb {
+  position: absolute;
+  left: -1000%;
+  right: -1000%;
+  top: -1000%;
+  bottom: -1000%;
+  margin: auto;
+  min-height: 100%;
+  min-width: 100%;
+  filter: grayscale(1);
+  transition: 0.3s;
+}
+@media (hover:hover) {
+  .photo-thumb:hover {
+    cursor: pointer;
+    transform: scale(0.9);
+    filter: grayscale(0.5);
+  }
+}
+
+
+
+
+#backtotop {
+  font-size: 5em;
+  position: fixed;
+  top: 90vh;
+  right: 8vw;
+}
+
+#backtotop:hover {
+  cursor: pointer;
+}
+
+
+#backtotop:active {
+  transform: scale(0.8);
+  transition: 0.1s;
 }
