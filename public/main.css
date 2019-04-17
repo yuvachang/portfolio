@@ -24,12 +24,14 @@
 }
 
 .headshot-div {
+  margin-top: 4em;
   filter: grayscale(100%);
   min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   transition: 1.25s ease-in-out;
 }
 
@@ -39,20 +41,28 @@
   transition: 1.25s ease-out;
 }
 
+.headshot-div.aboutme {
+  min-height: 0vh;
+  filter: grayscale(0%);
+  transition: 1.25s ease-out;
+}
+
 #show-nametag {
   width: 250px;
-  margin: 10px 0px -10px;
   z-index: -11;
-  opacity: 0;
-  transition: 1s ease-in;
-  transition-delay: 0.2s;
+  opacity: 1;
+  /* transform: scale(1); */
+  transition: opacity 0.7s 1s, width 1s;
+  transition-timing-function: ease-in;
 }
 
 #hide-nametag {
-  width: 250px;
+  width: 0px;
   z-index: -11;
   opacity: 0;
-  transition: 2s ease-in;
+  /* transform: scale(0); */
+  transition: opacity 0.5s, width 0.7s 0.5s;
+  transition-timing-function: ease-in;
 }
 
 img.image {
@@ -192,7 +202,7 @@ img.image:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 5em 10vw;
+  margin: 3em 10vw 5em;
 }
 
 .photo-thumb-container {
@@ -316,6 +326,30 @@ img.image:hover {
   transition: 0.1s;
 }
 
+/* ABOUT ME PAGE */
+
+.about-me {
+  margin: 1em 18vw 0vh;
+}
+
+.about {
+  padding: 0.5em;
+}
+
+.about.hr {
+  opacity: 0.05;
+  padding: 0;
+}
+
+.about.header {
+  font-style: italic;
+  font-size: large;
+}
+
+.about.p {
+  opacity: 0.7;
+}
+
 /* MENU ON BOTTOM, MOBILE VERSION */
 
 @media only screen and (max-width: 690px) {
@@ -333,6 +367,12 @@ img.image:hover {
   #close {
     top: 3em;
     left: 50px;
+  }
+
+  .headshot-div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .menu {

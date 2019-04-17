@@ -50,7 +50,7 @@ class Menu extends Component {
             </li>
           </Link>
           <li>
-            {'{'}design:make{'}'}
+            {'{'}projects{'}'}
           </li>
           <Link
             to='/pics'
@@ -60,14 +60,14 @@ class Menu extends Component {
               {'{'}photography{'}'}
             </li>
           </Link>
-          <Link
+          {/* <Link
             to='/resume'
             onClick={e => this.handleClickMenu(e, 'resume')}
             className='router-link'>
             <li>
               {'{'}resume{'}'}
             </li>
-          </Link>
+          </Link> */}
           <Link
             to='/about'
             onClick={e => this.handleClickMenu(e, 'about')}
