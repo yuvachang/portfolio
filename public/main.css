@@ -30,13 +30,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: 2s ease-in-out;
+  transition: 1.25s ease-in-out;
 }
 
 .headshot-div.open-menu {
   min-height: 0vh;
   filter: grayscale(0%);
-  transition: 2s ease-out;
+  transition: 1.25s ease-out;
 }
 
 #show-nametag {
