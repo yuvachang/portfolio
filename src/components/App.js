@@ -11,10 +11,12 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter history={history}>
-        <div className='app'>
-          <Nav />
-          <Routes />
-        </div>
+        {/* <TransitionGroup> */}
+          <div className='app'>
+            <Nav />
+            <Routes />
+          </div>
+        {/* </TransitionGroup> */}
       </BrowserRouter>
     )
   }

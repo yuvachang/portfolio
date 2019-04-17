@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Menu extends Component {
   handleClickOutside = event => {
     if (this.node.contains(event.target)) return
-    // if (!this.props.openItem) {
-      this.props.closeMenu(event)
-    // }
+    this.props.closeMenu(event)
   }
 
   componentDidMount() {
@@ -22,14 +20,18 @@ class Menu extends Component {
   }
 
   render() {
-    console.log(this.props.openContent)
     return (
       <div
-        className={this.props.visible ? (this.props.openContent ? 'menu fast' : 'menu') : 'menu hidden'}
+        className={
+          this.props.visible
+            ? this.props.openContent
+              ? 'menu fast'
+              : 'menu'
+            : 'menu hidden'
+        }
         ref={node => {
           this.node = node
         }}>
-        {/* <h4 id='close' onClick={this.props.closeMenu}>{'<<'}</h4> */}
         <img
           src={'../images/close.svg'}
           alt='image not found'
@@ -38,22 +40,42 @@ class Menu extends Component {
         />
 
         <ul>
+          <Link
+            to='/'
+            onClick={e => this.handleClickMenu(e, null)}
+            className='router-link'
+            >
+            <li style={{marginBottom: '15px'}}>
+              {'{'}yuva chang{'}'}
+            </li>
+          </Link>
           <li>
             {'{'}design:make{'}'}
           </li>
-          <Link to='/pics' onClick={(e) => this.handleClickMenu(e, 'pics')} className='router-link'>
-          <li>
-            {'{'}photography{'}'}
-          </li>
+          <Link
+            to='/pics'
+            onClick={e => this.handleClickMenu(e, 'pics')}
+            className='router-link'>
+            <li>
+              {'{'}photography{'}'}
+            </li>
           </Link>
-          <Link to='/resume' onClick={(e) => this.handleClickMenu(e, 'resume')} className='router-link' >
-          <li>
-            {'{'}resume{'}'}
-          </li>
+          <Link
+            to='/resume'
+            onClick={e => this.handleClickMenu(e, 'resume')}
+            className='router-link'>
+            <li>
+              {'{'}resume{'}'}
+            </li>
           </Link>
+          <Link
+            to='/about'
+            onClick={e => this.handleClickMenu(e, 'about')}
+            className='router-link'>
           <li>
             {'{'}about:me{'}'}
           </li>
+          </Link>
           <li>
             {'{'}contact{'}'}
           </li>
