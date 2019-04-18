@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import Menu from './Menu'
 
 class Nav extends Component {
   state = {
-    menu: true,
-    openContent: null,
+    menu: false,
+    pathname: '/',
   }
 
   openMenu = e => {
@@ -24,18 +25,28 @@ class Nav extends Component {
     }
   }
 
-  setOpenContent = content => {
+  setPathname = content => {
     console.log(content)
     this.setState({
-      openContent: content,
+      pathname: content,
     })
   }
 
   componentDidMount() {
     if (window.location.pathname !== '/') {
       this.setState({
-        openContent: window.location.pathname.slice(1),
+        pathname: window.location.pathname.slice(1),
       })
+    }
+  }
+
+  componentDidUpdate = prevProps => {
+    if (prevProps.location !== this.props.location) {
+      if (this.state.pathname !== this.props.location.pathname) {
+        this.setState({
+          pathname: this.props.location.pathname,
+        })
+      }
     }
   }
 
@@ -44,13 +55,12 @@ class Nav extends Component {
       <div>
         <div
           className={
-            this.state.menu || this.state.openContent
+            this.state.menu || this.state.pathname.length > 1
               ? window.location.pathname === '/about'
                 ? 'headshot-div aboutme'
                 : 'headshot-div open-menu'
               : 'headshot-div'
           }>
-         
           <img
             className={
               this.state.menu && window.location.pathname === '/'
@@ -62,7 +72,7 @@ class Nav extends Component {
             alt='image not found'
             onClick={this.openMenu}
           />
-           <img
+          <img
             id={
               window.location.pathname === '/about'
                 ? 'show-nametag'
@@ -75,12 +85,13 @@ class Nav extends Component {
         <Menu
           visible={this.state.menu}
           closeMenu={this.closeMenu}
-          setOpenContent={this.setOpenContent}
-          openContent={this.state.openContent}
+          setPathname={this.setPathname}
+          pathname={this.state.pathname}
         />
       </div>
     )
   }
 }
 
-export default Nav
+export default withRouter(Nav)
+// export default Nav

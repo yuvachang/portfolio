@@ -15,7 +15,7 @@ class Menu extends Component {
   }
 
   handleClickMenu = (e, content) => {
-    this.props.setOpenContent(content)
+    this.props.setPathname(content)
     this.props.closeMenu(e)
   }
 
@@ -24,7 +24,7 @@ class Menu extends Component {
       <div
         className={
           this.props.visible
-            ? this.props.openContent
+            ? this.props.pathname.length>1
               ? 'menu fast'
               : 'menu'
             : 'menu hidden'
@@ -42,7 +42,7 @@ class Menu extends Component {
         <ul>
           <Link
             to='/'
-            onClick={e => this.handleClickMenu(e, null)}
+            onClick={e => this.handleClickMenu(e, '/')}
             className='router-link'
             >
             <li style={{marginBottom: '15px'}}>
@@ -54,7 +54,7 @@ class Menu extends Component {
           </li>
           <Link
             to='/pics'
-            onClick={e => this.handleClickMenu(e, 'pics')}
+            onClick={e => this.handleClickMenu(e, '/pics')}
             className='router-link'>
             <li>
               {'{'}photography{'}'}
@@ -70,7 +70,7 @@ class Menu extends Component {
           </Link> */}
           <Link
             to='/about'
-            onClick={e => this.handleClickMenu(e, 'about')}
+            onClick={e => this.handleClickMenu(e, '/about')}
             className='router-link'>
           <li>
             {'{'}about:me{'}'}
