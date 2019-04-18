@@ -31,12 +31,12 @@
 .headshot-div {
   margin-top: 4em;
   filter: grayscale(100%);
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
   transition: 1.25s ease-in-out;
 }
 
@@ -52,21 +52,23 @@
   transition: 1.25s ease-out;
 }
 
-#show-nametag {
-  width: 250px;
+#nametag {
+  font-family: 'Amatic SC', cursive;
+  font-size: 3em;
+  text-align: center;
+  width: 200px;
+  height: 60px;
   z-index: -11;
   opacity: 1;
-  /* transform: scale(1); */
-  transition: opacity 0.7s 1s, width 1s;
+  transition: opacity 0.7s 1s, width 1s, height 1s;
   transition-timing-function: ease-in;
 }
 
-#hide-nametag {
+#nametag.hide {
   width: 0px;
-  z-index: -11;
+  height: 0px;
   opacity: 0;
-  /* transform: scale(0); */
-  transition: opacity 0.5s, width 0.7s 0.5s;
+  transition: opacity 0.5s, width 0.7s 0.5s, height 0.7s 0.5s;
   transition-timing-function: ease-in;
 }
 
@@ -334,13 +336,8 @@ img.image:hover {
 /* ABOUT ME PAGE */
 
 .about-me {
-  /* margin: 1em 18vw 0vh; */
   margin: auto;
-  margin-top: 1em;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+  margin-top: 0.5em;
   max-width: 700px;
 }
 

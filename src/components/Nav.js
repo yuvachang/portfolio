@@ -72,14 +72,16 @@ class Nav extends Component {
             alt='image not found'
             onClick={this.openMenu}
           />
-          <img
-            id={
-              window.location.pathname === '/about'
-                ? 'show-nametag'
-                : 'hide-nametag'
-            }
+          <div
+            className={window.location.pathname === '/about' ? '' : 'hide'}
+            id='nametag'>
+            yuva chang
+          </div>
+          {/* <img
+            className={window.location.pathname === '/about' ? '' : 'hide'}
+            id='nametag'
             src='../images/neon.gif'
-          />
+          /> */}
         </div>
 
         <Menu
