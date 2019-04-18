@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { thumbnails } from './photoUrls'
+import { thumbnails } from './data/photoUrls'
 import SinglePhoto from './SinglePhoto'
 
 export default class Pics extends Component {
