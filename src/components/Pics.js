@@ -36,7 +36,7 @@ export default class Pics extends Component {
     })
   }
 
-  scrollFunc = (e) => {
+  scrollFunc = e => {
     if (window.scrollY > 500 && !this.state.showBackToTop) {
       this.setState({
         showBackToTop: true,
@@ -51,42 +51,53 @@ export default class Pics extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener('scroll', (e) => this.scrollFunc(e))
+    document.addEventListener('scroll', e => this.scrollFunc(e))
   }
   componentWillUnmount() {
-    document.removeEventListener('scroll', (e) => this.scrollFunc(e))
+    document.removeEventListener('scroll', e => this.scrollFunc(e))
   }
 
   render() {
     return (
-      <div className='photos'>
-        <SinglePhoto
-          photo={this.state.photo}
-          isOpen={this.state.isOpen}
-          openPhoto={this.openPhoto}
-          closePhoto={this.closePhoto}
-          idx={this.state.idx}
-        />
+      <div className='photos-container'>
+        <div className='photos'>
+          <SinglePhoto
+            photo={this.state.photo}
+            isOpen={this.state.isOpen}
+            openPhoto={this.openPhoto}
+            closePhoto={this.closePhoto}
+            idx={this.state.idx}
+          />
 
-        {thumbnails.map((url, idx) => {
-          return (
-            <div key={url} className='photo-thumb-container'>
-              <img
-                src={url}
-                className='photo-thumb'
-                onClick={() => this.openPhoto(url, idx)}
-              />
-            </div>
-          )
-        })}
+          {thumbnails.map((url, idx) => {
+            return (
+              <div key={url} className='photo-thumb-container'>
+                <img
+                  src={url}
+                  className='photo-thumb'
+                  onClick={() => this.openPhoto(url, idx)}
+                />
+              </div>
+            )
+          })}
+          
+          <div className='filling-empty-space-thumbs'/>
+          <div className='filling-empty-space-thumbs'/>
+          <div className='filling-empty-space-thumbs'/>
+          <div className='filling-empty-space-thumbs'/>
+          <div className='filling-empty-space-thumbs'/>
+          <div className='filling-empty-space-thumbs'/>
+          <div className='filling-empty-space-thumbs'/>
+          <div className='filling-empty-space-thumbs'/>
 
-        <div
-          id='backtotop'
-          className={this.state.showBackToTop ? '' : 'closed'}
-          onClick={() => {
-            window.scroll({ top: 0, left: 0, behavior: 'smooth' })
-          }}>
-          ^
+          <div
+            id='backtotop'
+            className={this.state.showBackToTop ? '' : 'closed'}
+            onClick={() => {
+              window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+            }}>
+            ^
+          </div>
         </div>
       </div>
     )

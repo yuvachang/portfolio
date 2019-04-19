@@ -1,18 +1,52 @@
 import React from 'react'
-import { aboutme, keywords } from './data/aboutme.js'
+import { aboutme, keywords, skills } from './data/aboutme.js'
 
 const pop = text => {
-  // let regex = /\w+(?:'\w+)*/g;
   let regex = /[a-zA-Z0-9]/gi
-  // console.log('MERNb23423.4,l/a?h"dasdf3'.match(regex).join(''))
   let textArr = text.split(' ')
-  
-  return textArr.map(word => {
-    if (keywords.includes(word.match(regex).join('')))
-      return <span className='pop'>{word}</span>
-    return word
-  }).reduce((prev, curr) => [prev, ' ', curr])
-  
+  return textArr
+    .map((word, idx) => {
+      let wordOnly = word.toLowerCase().match(regex).join('')
+      if (keywords.includes(wordOnly)) {
+        // check if phrase is 'software engineer' or 'software engineering'
+        if (word === 'software' && textArr[idx + 1].includes('engineer')) {
+          word = word + ' ' + textArr[idx + 1]
+        }
+        if (textArr[idx - 1] === 'software' && word.includes('engineer')) return
+        return (
+          <span className='pop'>
+            <a
+              className='link'
+              target='_blank'
+              href={
+                wordOnly === 'mern' || wordOnly === 'pern'
+                  ? `https://www.google.com/search?q=${word}+stack`
+                  : `https://www.google.com/search?q=${word}`
+              }>
+              {word}
+            </a>
+          </span>
+        )
+      }
+      return word
+    })
+    .reduce((prev, curr) => [prev, ' ', curr])
+}
+
+const highlightEachWord = text => {
+  return text
+    .split(', ')
+    .map(word => (
+      <span className='single-pop'>
+        <a
+          className='link'
+          target='_blank'
+          href={`https://www.google.com/search?q=${word}`}>
+          {word}
+        </a>
+      </span>
+    ))
+    .reduce((prev, curr) => [prev, ', ', curr])
 }
 
 export default function AboutMe() {
@@ -24,11 +58,7 @@ export default function AboutMe() {
       </div>
       <div className='about blurb'>
         <header className='about header'>skills</header>
-        <p className='about p'>
-          javascript, react, redux, express, sequelize, node.js, html, css,
-          psql, git, sql, nosql, mongodb, mongoose, socket.io, heroku, webpack,
-          rhino, vray, photoshop, illustrator, indesign, autocad
-        </p>
+        <p className='about p pointer'>{highlightEachWord(skills)}</p>
       </div>
     </div>
   )
