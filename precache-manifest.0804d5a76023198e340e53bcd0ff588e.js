@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c46925992c215bb8b95c",
+    "revision": "54c07d975ff43a034a70",
     "url": "/static/css/main.7db38a3a.chunk.css"
   },
   {
-    "revision": "c46925992c215bb8b95c",
-    "url": "/static/js/main.d6b289e4.chunk.js"
+    "revision": "54c07d975ff43a034a70",
+    "url": "/static/js/main.effcfd07.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/static/media/YuvaChangResume.79ef290e.pdf"
   },
   {
-    "revision": "05aa4a9cc1d87dbd8da1659b956e6554",
+    "revision": "25e15bac5b24cd90884a497e5f285698",
     "url": "/index.html"
   }
 ];
