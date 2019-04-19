@@ -12,6 +12,11 @@
   font-weight: 400;
 }
 
+a.link {
+  color: inherit;
+  text-decoration: none;
+}
+
 #headshot {
   align-self: center;
   align-items: center;
@@ -200,11 +205,25 @@ img.image:hover {
   align-self: center;
 }
 
+.filling-empty-space-thumbs {
+  width: 250px; /*same width as thumbnails*/
+  margin: 10px;
+  position: relative;
+  height: 0; 
+}
+
+.photos-container {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+}
+
 .photos {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 3em 10vw 5em;
+  /* margin: 3em 10vw 5em; */
+  width: 77vw;
 }
 
 .photo-thumb-container {
@@ -353,19 +372,36 @@ img.image:hover {
 }
 
 .about.p {
+  text-align: justify;
+  text-justify: inter-word;
   opacity: 0.7;
 }
 
+.about.p.pointer {
+  cursor: pointer;
+}
+
 .about.p:hover .pop {
-  /* font-style: italic; */
-  /* position: relative;  */
   font-variant: initial;
   line-height: 0px;
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1em;
+  color: #999999;
 }
 
-.pop::after {
+.pop {
+  cursor: pointer;
+}
+
+.single-pop:hover {
+  font-variant: initial;
+  line-height: 0px;
+  font-weight: bold;
+  font-size: 1em;
+  color: #999999;
+}
+
+/* .pop::after {
   margin: -10px;
   text-align: center;
   display: block;
@@ -373,7 +409,7 @@ img.image:hover {
   height: 0;
   overflow: hidden;
   visibility: hidden;
-}
+} */
 
 /* MENU ON BOTTOM, MOBILE VERSION */
 
