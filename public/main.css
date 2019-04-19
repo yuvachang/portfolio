@@ -34,9 +34,8 @@ a.link {
 }
 
 .headshot-div {
-  margin-top: 4em;
   filter: grayscale(100%);
-  min-height: 88vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,12 +43,14 @@ a.link {
 }
 
 .headshot-div.open-menu {
+  margin-top: 4em;
   min-height: 0vh;
   filter: grayscale(0%);
   transition: 1.25s ease-out;
 }
 
 .headshot-div.aboutme {
+  margin-top: 4em;
   min-height: 0vh;
   filter: grayscale(0%);
   transition: 1.25s ease-out;
@@ -131,6 +132,15 @@ img.image:hover {
 .router-link {
   color: #0b9d89;
   text-decoration: none;
+  /* transform: scale(1); */
+  font-size: 1em;
+  transition: 0.25s;
+}
+
+.router-link:hover {
+  /* transform: scale(1.1); */
+  font-size: 1.1em;
+  transition: 0.25s;
 }
 
 /* MENU ON SIDE, WEB VERSION */
@@ -205,18 +215,20 @@ img.image:hover {
   align-self: center;
 }
 
+.page-container {
+  margin-top: 3em;
+  margin: 3em 1.5em 2em;
+  display: flex;
+  justify-content: center;
+}
+
 .filling-empty-space-thumbs {
   width: 250px; /*same width as thumbnails*/
   margin: 10px;
   position: relative;
-  height: 0; 
+  height: 0;
 }
 
-.photos-container {
-  margin-top: 3em;
-  display: flex;
-  justify-content: center;
-}
 
 .photos {
   display: flex;
@@ -352,6 +364,7 @@ img.image:hover {
 .about-me {
   margin: auto;
   margin-top: 0.5em;
+  /* margin: 0.5em 1em; */
   max-width: 700px;
 }
 
@@ -393,12 +406,14 @@ img.image:hover {
   cursor: pointer;
 }
 
-.single-pop:hover {
-  font-variant: initial;
-  line-height: 0px;
-  font-weight: bold;
-  font-size: 1em;
-  color: #999999;
+@media (hover: hover) {
+  .single-pop:hover {
+    font-variant: initial;
+    line-height: 0px;
+    font-weight: bold;
+    font-size: 1em;
+    color: #999999;
+  }
 }
 
 /* .pop::after {
@@ -473,4 +488,13 @@ img.image:hover {
     z-index: 33;
     margin: 10px 0px;
   }
+
+  .pop, .single-pop {
+    font-variant: initial;
+    line-height: 0px;
+    font-weight: bold;
+    font-size: 1em;
+    color: #999999;
+  }
+
 }

@@ -59,7 +59,7 @@ export default class Pics extends Component {
 
   render() {
     return (
-      <div className='photos-container'>
+      <div className='page-container'>
         <div className='photos'>
           <SinglePhoto
             photo={this.state.photo}

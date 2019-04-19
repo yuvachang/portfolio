@@ -6,7 +6,10 @@ const pop = text => {
   let textArr = text.split(' ')
   return textArr
     .map((word, idx) => {
-      let wordOnly = word.toLowerCase().match(regex).join('')
+      let wordOnly = word
+        .toLowerCase()
+        .match(regex)
+        .join('')
       if (keywords.includes(wordOnly)) {
         // check if phrase is 'software engineer' or 'software engineering'
         if (word === 'software' && textArr[idx + 1].includes('engineer')) {
@@ -51,14 +54,16 @@ const highlightEachWord = text => {
 
 export default function AboutMe() {
   return (
-    <div className='about-me'>
-      <div className='about'>
-        <header className='about header'>who am i</header>
-        <p className='about p'>{pop(aboutme)}</p>
-      </div>
-      <div className='about blurb'>
-        <header className='about header'>skills</header>
-        <p className='about p pointer'>{highlightEachWord(skills)}</p>
+    <div className='page-container'>
+      <div className='about-me'>
+        <div className='about'>
+          <header className='about header'>who am i</header>
+          <p className='about p'>{pop(aboutme)}</p>
+        </div>
+        <div className='about blurb'>
+          <header className='about header'>skills</header>
+          <p className='about p pointer'>{highlightEachWord(skills)}</p>
+        </div>
       </div>
     </div>
   )

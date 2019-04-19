@@ -46,7 +46,7 @@ class Menu extends Component {
             className='router-link'
             >
             <li style={{marginBottom: '15px'}}>
-              {'{'}yuva chang{'}'}
+              {'{'} null {'}'}
             </li>
           </Link>
           <li>
