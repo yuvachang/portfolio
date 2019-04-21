@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { thumbnails } from './data/photoUrls'
 import SinglePhoto from './SinglePhoto'
+import NavButtons from './NavButtons'
 
-export default class Pics extends Component {
+class Pics extends Component {
   state = {
     photo: '',
     idx: 0,
@@ -15,7 +16,6 @@ export default class Pics extends Component {
         photo: url,
         idx,
         isOpen: true,
-        showBackToTop: false,
       })
     } else {
       if (idx > thumbnails.length - 1) {
@@ -34,27 +34,6 @@ export default class Pics extends Component {
     this.setState({
       isOpen: false,
     })
-  }
-
-  scrollFunc = e => {
-    if (window.scrollY > 500 && !this.state.showBackToTop) {
-      this.setState({
-        showBackToTop: true,
-      })
-    } else {
-      if (window.scrollY < 700 && this.state.showBackToTop) {
-        this.setState({
-          showBackToTop: false,
-        })
-      }
-    }
-  }
-
-  componentDidMount() {
-    document.addEventListener('scroll', e => this.scrollFunc(e))
-  }
-  componentWillUnmount() {
-    document.removeEventListener('scroll', e => this.scrollFunc(e))
   }
 
   render() {
@@ -80,26 +59,19 @@ export default class Pics extends Component {
               </div>
             )
           })}
-          
-          <div className='filling-empty-space-thumbs'/>
-          <div className='filling-empty-space-thumbs'/>
-          <div className='filling-empty-space-thumbs'/>
-          <div className='filling-empty-space-thumbs'/>
-          <div className='filling-empty-space-thumbs'/>
-          <div className='filling-empty-space-thumbs'/>
-          <div className='filling-empty-space-thumbs'/>
-          <div className='filling-empty-space-thumbs'/>
 
-          <div
-            id='backtotop'
-            className={this.state.showBackToTop ? '' : 'closed'}
-            onClick={() => {
-              window.scroll({ top: 0, left: 0, behavior: 'smooth' })
-            }}>
-            ^
-          </div>
+          <div className='filling-empty-space-thumbs' />
+          <div className='filling-empty-space-thumbs' />
+          <div className='filling-empty-space-thumbs' />
+          <div className='filling-empty-space-thumbs' />
+          <div className='filling-empty-space-thumbs' />
+          <div className='filling-empty-space-thumbs' />
+          <div className='filling-empty-space-thumbs' />
+          <div className='filling-empty-space-thumbs' />
         </div>
       </div>
     )
   }
 }
+
+export default Pics

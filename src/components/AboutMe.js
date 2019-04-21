@@ -1,5 +1,6 @@
 import React from 'react'
 import { aboutme, keywords, skills } from './data/aboutme.js'
+import NavButtons from './NavButtons.js'
 
 const pop = text => {
   let regex = /[a-zA-Z0-9]/gi
@@ -52,7 +53,7 @@ const highlightEachWord = text => {
     .reduce((prev, curr) => [prev, ', ', curr])
 }
 
-export default function AboutMe() {
+const AboutMe = () => {
   return (
     <div className='page-container'>
       <div className='about-me'>
@@ -68,3 +69,5 @@ export default function AboutMe() {
     </div>
   )
 }
+
+export default AboutMe

@@ -6,19 +6,25 @@ class Nav extends Component {
   state = {
     menu: false,
     pathname: '/',
+    showBackToTop: false,
   }
 
   openMenu = e => {
-    if (!this.state.menu) {
-      this.setState({
-        menu: true,
-      })
-    }
+    // if (!this.state.menu) {
+    if (this.state.menu && e.target.id === 'headshot') return
+    this.setState({
+      menu: !this.state.menu,
+    })
+    // }
   }
 
   closeMenu = e => {
-    e.stopPropagation()
-    if (this.state.menu && e.target.id !== 'headshot') {
+    // e.stopPropagation()
+    if (
+      this.state.menu &&
+      e.target.id !== 'headshot' &&
+      e.target.id !== 'menu-button'
+    ) {
       this.setState({
         menu: false,
       })
@@ -32,7 +38,22 @@ class Nav extends Component {
     })
   }
 
+  scrollFunc = e => {
+    if (window.scrollY > 500 && !this.state.showBackToTop) {
+      this.setState({
+        showBackToTop: true,
+      })
+    } else {
+      if (window.scrollY < 700 && this.state.showBackToTop) {
+        this.setState({
+          showBackToTop: false,
+        })
+      }
+    }
+  }
+
   componentDidMount() {
+    document.addEventListener('scroll', e => this.scrollFunc(e))
     if (window.location.pathname !== '/') {
       this.setState({
         pathname: window.location.pathname.slice(1),
@@ -41,13 +62,17 @@ class Nav extends Component {
   }
 
   componentDidUpdate = prevProps => {
-    if (prevProps.location !== this.props.location) {
-      if (this.state.pathname !== this.props.location.pathname) {
+    if (prevProps.location !== window.location) {
+      if (this.state.pathname !== window.location.pathname) {
         this.setState({
-          pathname: this.props.location.pathname,
+          pathname: window.location.pathname,
         })
       }
     }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', e => this.scrollFunc(e))
   }
 
   render() {
@@ -90,10 +115,25 @@ class Nav extends Component {
           setPathname={this.setPathname}
           pathname={this.state.pathname}
         />
+        <div
+          id='backtotop'
+          className={this.state.showBackToTop ? '' : 'closed'}
+          onClick={() => {
+            window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+          }}>
+          top
+        </div>
+
+        <div
+          id='menu-button'
+          className={this.state.showBackToTop ? '' : 'closed'}
+          onClick={this.openMenu}>
+          menu
+        </div>
       </div>
     )
   }
 }
 
-export default withRouter(Nav)
-// export default Nav
+// export default withRouter(Nav)
+export default Nav

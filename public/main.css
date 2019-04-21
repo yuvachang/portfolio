@@ -56,25 +56,61 @@ a.link {
   transition: 1.25s ease-out;
 }
 
-#nametag {
+/* NAV BUTTONS */
+
+#backtotop {
   font-family: 'Amatic SC', cursive;
   font-size: 3em;
-  text-align: center;
-  width: 200px;
-  height: 60px;
-  z-index: -11;
-  opacity: 1;
-  transition: opacity 0.7s 1s, width 1s, height 1s;
-  transition-timing-function: ease-in;
+  position: fixed;
+  opacity: 0.8;
+  top: 85vh;
+  left: 85vw;
+  transition: opacity 1.5s, font-size 0s;
 }
 
-#nametag.hide {
-  width: 0px;
-  height: 0px;
+#backtotop.closed {
   opacity: 0;
-  transition: opacity 0.5s, width 0.7s 0.5s, height 0.7s 0.5s;
-  transition-timing-function: ease-in;
+  font-size: 0em;
+  transition: opacity 1.5s, font-size 0s 1.5s;
 }
+
+#backtotop:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+#backtotop:active {
+  transform: scale(0.9);
+  transition: 0.1s;
+}
+
+#menu-button {
+  font-family: 'Amatic SC', cursive;
+  font-size: 3em;
+  position: fixed;
+  opacity: 0.8;
+  top: 81vh;
+  left: 85vw;
+  transition: opacity 1.5s, font-size 0s;
+}
+
+#menu-button.closed {
+  opacity: 0;
+  font-size: 0em;
+  transition: opacity 1.5s, font-size 0s 1.5s;
+}
+
+#menu-button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+#menu-button:active {
+  transform: scale(0.8);
+  transition: 0.1s;
+}
+
+/* NAV BUTTONS ^^^^^^^^^ */
 
 /* img.image {
   transition: 0.5s;
@@ -145,7 +181,7 @@ img.image:hover {
 
 /* MENU ON SIDE, WEB VERSION */
 #close {
-  opacity: 0.3;
+  opacity: 0.8;
   top: 4em;
   position: absolute;
   width: 25px;
@@ -229,7 +265,6 @@ img.image:hover {
   height: 0;
 }
 
-
 .photos {
   display: flex;
   justify-content: center;
@@ -260,36 +295,19 @@ img.image:hover {
   transition: 0.3s;
 }
 
+@media only screen and (max-width: 690px) {
+  .photo-thumb-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 @media (hover: hover) {
   .photo-thumb:hover {
     cursor: pointer;
     transform: scale(0.9);
     filter: grayscale(0.5);
   }
-}
-
-#backtotop {
-  font-size: 5em;
-  position: fixed;
-  opacity: 0.3;
-  top: 90vh;
-  right: 8vw;
-  transition: opacity 1.5s, font-size 0s;
-}
-
-#backtotop.closed {
-  opacity: 0;
-  font-size: 0em;
-  transition: opacity 1.5s, font-size 0s 1.5s;
-}
-
-#backtotop:hover {
-  cursor: pointer;
-}
-
-#backtotop:active {
-  transform: scale(0.8);
-  transition: 0.1s;
 }
 
 #large-photo {
@@ -361,6 +379,26 @@ img.image:hover {
 
 /* ABOUT ME PAGE */
 
+#nametag {
+  font-family: 'Amatic SC', cursive;
+  font-size: 3em;
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  z-index: -11;
+  opacity: 1;
+  transition: opacity 0.7s 1s, width 1s, height 1s;
+  transition-timing-function: ease-in;
+}
+
+#nametag.hide {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  transition: opacity 0.5s, width 0.7s 0.5s, height 0.7s 0.5s;
+  transition-timing-function: ease-in;
+}
+
 .about-me {
   margin: auto;
   margin-top: 0.5em;
@@ -379,8 +417,9 @@ img.image:hover {
 }
 
 .about.header {
-  font-size: 1.2em;
-  font-weight: 500;
+  /* font-family: 'Amatic SC', cursive; */
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.6em;
   font-style: italic;
 }
 
