@@ -18,7 +18,7 @@ const pop = text => {
         }
         if (textArr[idx - 1] === 'software' && word.includes('engineer')) return
         return (
-          <span className='pop' key={word+idx}>
+          <span className='pop' key={word + idx}>
             <a
               className='link'
               target='_blank'
@@ -40,8 +40,8 @@ const pop = text => {
 const highlightEachWord = text => {
   return text
     .split(', ')
-    .map((word,idx) => (
-      <span className='single-pop' key={word+idx}>
+    .map((word, idx) => (
+      <span className='single-pop' key={word + idx}>
         <a
           className='link'
           target='_blank'
@@ -57,11 +57,11 @@ const AboutMe = () => {
   return (
     <div className='page-container'>
       <div className='about-me'>
-        <div className='about'>
+        <div className='card'>
           <header className='about header'>who am i</header>
           <p className='about p'>{pop(aboutme)}</p>
         </div>
-        <div className='about blurb'>
+        <div className='card'>
           <header className='about header'>skills</header>
           <p className='about p pointer'>{highlightEachWord(skills)}</p>
         </div>

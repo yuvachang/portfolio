@@ -38,7 +38,7 @@ class Pics extends Component {
 
   render() {
     return (
-      <div className='page-container'>
+      <div className='page-container pics'>
         <div className='photos'>
           <SinglePhoto
             photo={this.state.photo}

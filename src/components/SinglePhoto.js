@@ -2,10 +2,7 @@ import React, { Component } from 'react'
 
 export default class SinglePhoto extends Component {
   handleClickOutside = event => {
-    if (
-      event.target.id === 'large-photo' ||
-      event.target.className === 'arrow'
-    )
+    if (event.target.id === 'large-photo' || event.target.className === 'arrow')
       return
     this.props.closePhoto()
   }
@@ -18,17 +15,39 @@ export default class SinglePhoto extends Component {
   }
 
   render() {
-    const url = this.props.photo.slice(0, -5).concat('h'+this.props.photo.slice(-4))
+    const pUrl = this.props.photo
+    const url =
+      pUrl[pUrl.length - 5] === 'l'
+        ? pUrl.slice(0, -5).concat('h' + pUrl.slice(-4))
+        : pUrl
     // const url = this.props.photo
     return (
       <div className={this.props.isOpen ? 'single-photo-container' : 'no-show'}>
-          <div
-          className='arrow'
-          style={{left:'3vw'}}
-          onClick={() => this.props.openPhoto(null, this.props.idx - 1)}>
-          {'<'}
+        <div>
+          <img
+            src={'../images/close.svg'}
+            alt='image not found'
+            id='close'
+            onClick={this.props.closeMenu}
+          />
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', height: '80%', width: '80%', alignContent: 'center'}}>
+
+        {this.props.idx && (
+          <div
+            className='arrow'
+            style={{ left: '3vw' }}
+            onClick={() => this.props.openPhoto(null, this.props.idx - 1)}>
+            {'<'}
+          </div>
+        )}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            height: '80%',
+            width: '80%',
+            alignContent: 'center',
+          }}>
           <img
             src={url}
             id='large-photo'
@@ -38,12 +57,14 @@ export default class SinglePhoto extends Component {
             }}
           />
         </div>
-        <div
-          className='arrow'
-          style={{right:'3vw'}}
-          onClick={() => this.props.openPhoto(null, this.props.idx + 1)}>
-          >
-        </div>
+        {this.props.idx && (
+          <div
+            className='arrow'
+            style={{ right: '3vw' }}
+            onClick={() => this.props.openPhoto(null, this.props.idx + 1)}>
+            {'>'}
+          </div>
+        )}
       </div>
     )
   }

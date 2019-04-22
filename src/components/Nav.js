@@ -7,13 +7,20 @@ class Nav extends Component {
     menu: false,
     pathname: '/',
     showBackToTop: false,
+    screenWidth: 0,
   }
 
   openMenu = e => {
+    console.log(e.target)
     if (this.state.menu && e.target.id === 'headshot') return
     this.setState({
       menu: !this.state.menu,
     })
+    // else {
+    //   this.setPathname({
+    //     menu: true
+    //   })
+    // }
   }
 
   closeMenu = e => {
@@ -49,8 +56,18 @@ class Nav extends Component {
     }
   }
 
+  updateScreenWidth = e => {
+    console.log(e)
+    this.setState({
+      screenWidth: window.innerWidth,
+    })
+  }
+
   componentDidMount() {
+    this.updateScreenWidth()
     document.addEventListener('scroll', e => this.scrollFunc(e))
+    window.addEventListener('resize', e => this.updateScreenWidth(e))
+
     if (window.location.pathname !== '/') {
       this.setState({
         pathname: window.location.pathname.slice(1),
@@ -61,6 +78,7 @@ class Nav extends Component {
   componentDidUpdate = prevProps => {
     if (prevProps.location !== window.location) {
       if (this.state.pathname !== window.location.pathname) {
+        this.updateScreenWidth()
         this.setState({
           pathname: window.location.pathname,
         })
@@ -70,16 +88,20 @@ class Nav extends Component {
 
   componentWillUnmount() {
     document.removeEventListener('scroll', e => this.scrollFunc(e))
+    window.removeEventListener('resize', e => this.updateScreenWidth(e))
   }
 
   render() {
     return (
       <div>
-        <img
-          src='../images/hamburger.svg'
-          id='menu-icon'
-          className={this.state.menu ? 'closed' : ''}
-          onClick={this.openMenu}/>
+        {this.state.pathname !== '/' && (
+          <img
+            src='../images/hamburger.svg'
+            id='menu-icon'
+            className={this.state.menu ? 'closed' : ''}
+            onClick={this.openMenu}
+          />
+        )}
         <div
           className={
             this.state.menu || this.state.pathname.length > 1
@@ -112,6 +134,7 @@ class Nav extends Component {
           setPathname={this.setPathname}
           pathname={this.state.pathname}
         />
+
         <div
           id='backtotop'
           className={this.state.showBackToTop ? '' : 'closed'}
@@ -121,12 +144,21 @@ class Nav extends Component {
           top
         </div>
 
-        <div
-          id='menu-button'
-          className={this.state.showBackToTop ? '' : 'closed'}
-          onClick={this.openMenu}>
-          menu
-        </div>
+        {this.state.screenWidth > 700 ? (
+          <div
+            id='menu-button'
+            className={this.state.showBackToTop ? '' : 'closed'}
+            onClick={this.openMenu}>
+            menu
+          </div>
+        ) : (
+          <img
+            src='../images/hamburger.svg'
+            id='menu-button'
+            className={this.state.menu ? 'icon closed' : this.state.showBackToTop ? 'icon' : ''}
+            onClick={this.openMenu}
+          />
+        )}
       </div>
     )
   }
