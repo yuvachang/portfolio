@@ -59,7 +59,7 @@ class Pics extends Component {
               </div>
             )
           })}
-
+          {/* fill in last row, to keep last row flex-wrap left-aligned */}
           <div className='filling-empty-space-thumbs' />
           <div className='filling-empty-space-thumbs' />
           <div className='filling-empty-space-thumbs' />

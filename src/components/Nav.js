@@ -10,16 +10,13 @@ class Nav extends Component {
   }
 
   openMenu = e => {
-    // if (!this.state.menu) {
     if (this.state.menu && e.target.id === 'headshot') return
     this.setState({
       menu: !this.state.menu,
     })
-    // }
   }
 
   closeMenu = e => {
-    // e.stopPropagation()
     if (
       this.state.menu &&
       e.target.id !== 'headshot' &&
@@ -78,6 +75,11 @@ class Nav extends Component {
   render() {
     return (
       <div>
+        <img
+          src='../images/hamburger.svg'
+          id='menu-icon'
+          className={this.state.menu ? 'closed' : ''}
+          onClick={this.openMenu}/>
         <div
           className={
             this.state.menu || this.state.pathname.length > 1
@@ -102,11 +104,6 @@ class Nav extends Component {
             id='nametag'>
             yuva chang
           </div>
-          {/* <img
-            className={window.location.pathname === '/about' ? '' : 'hide'}
-            id='nametag'
-            src='../images/neon.gif'
-          /> */}
         </div>
 
         <Menu

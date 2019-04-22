@@ -24,7 +24,7 @@ class Menu extends Component {
       <div
         className={
           this.props.visible
-            ? this.props.pathname.length>1
+            ? this.props.pathname.length > 1
               ? 'menu fast'
               : 'menu'
             : 'menu hidden'
@@ -43,15 +43,19 @@ class Menu extends Component {
           <Link
             to='/'
             onClick={e => this.handleClickMenu(e, '/')}
-            className='router-link'
-            >
-            <li style={{marginBottom: '15px'}}>
+            className='router-link'>
+            <li style={{ marginBottom: '15px' }}>
               {'{'} null {'}'}
             </li>
           </Link>
-          <li>
-            {'{'}projects{'}'}
-          </li>
+          <Link
+            to='/projs'
+            onClick={e => this.handleClickMenu(e, '/projs')}
+            className='router-link'>
+            <li>
+              {'{'}projects{'}'}
+            </li>
+          </Link>
           <Link
             to='/pics'
             onClick={e => this.handleClickMenu(e, '/pics')}
@@ -60,21 +64,13 @@ class Menu extends Component {
               {'{'}photography{'}'}
             </li>
           </Link>
-          {/* <Link
-            to='/resume'
-            onClick={e => this.handleClickMenu(e, 'resume')}
-            className='router-link'>
-            <li>
-              {'{'}resume{'}'}
-            </li>
-          </Link> */}
           <Link
             to='/about'
             onClick={e => this.handleClickMenu(e, '/about')}
             className='router-link'>
-          <li>
-            {'{'}about:me{'}'}
-          </li>
+            <li>
+              {'{'}about:me{'}'}
+            </li>
           </Link>
           <li>
             {'{'}contact{'}'}

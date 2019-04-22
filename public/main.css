@@ -110,79 +110,53 @@ a.link {
   transition: 0.1s;
 }
 
-/* NAV BUTTONS ^^^^^^^^^ */
-
-/* img.image {
-  transition: 0.5s;
-}
-
-img.image:hover {
-  cursor: pointer;
-} */
-
-/* .menu-icon {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-#hamburger {
-  opacity: 0.3;
-  top: 50px;
-  position: absolute;
-  width: 40px;
-  transform: scale(1);
-  left: 25px;
-  z-index: 30;
-  transition: 0.2s ease-out;
-}
-
-#close {
-  opacity: 0.3;
-  top: 50px;
-  position: absolute;
-  width: 40px;
-  transform: scale(1);
-  left: 180px;
-  z-index: 30;
-  transition: 0.5s ease-in-out;
-}
-
-#hamburger.hidden {
-  transform: scale(0);
-  transition: 0.2 ease-out;
-}
-
-#close.hidden {
-  transform: scale(0);
-  left: 25px;
-  transition: 0.3s ease-out;
-}
-
-#hamburger:hover,
-#close:hover {
-  cursor: pointer;
-  filter: invert(80%);
-}  */
-
 .router-link {
   color: #0b9d89;
   text-decoration: none;
-  /* transform: scale(1); */
   font-size: 1em;
   transition: 0.25s;
 }
 
 .router-link:hover {
-  /* transform: scale(1.1); */
   font-size: 1.1em;
-  transition: 0.25s;
+}
+
+.router-link:active {
+  font-size: 1em;
 }
 
 /* MENU ON SIDE, WEB VERSION */
+#menu-icon {
+  opacity: 0.8;
+  top: 6.7em;
+  position: absolute;
+  width: 25px;
+  transform: scale(1.5);
+  filter: invert(0.4);
+  left: 57px;
+  z-index: 30;
+  transition: opacity 0.5s 0.25s, width 0s, z-index 0s;
+}
+
+#menu-icon.closed {
+  opacity: 0;
+  width:0px;
+  z-index: -11;
+  transition: opacity 0.5s, width 0s 0.5s, z-index 0s 0.5s;
+}
+
+#menu-icon:hover {
+  cursor: pointer;
+}
+
+#menu-icon:active {
+  transform: scale(1.2);
+  transition: 0.1s;
+}
+
 #close {
   opacity: 0.8;
-  top: 4em;
+  top: 6.7em;
   position: absolute;
   width: 25px;
   transform: rotate(-90deg) scale(2);
@@ -269,7 +243,6 @@ img.image:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* margin: 3em 10vw 5em; */
   width: 77vw;
 }
 
@@ -455,18 +428,7 @@ img.image:hover {
   }
 }
 
-/* .pop::after {
-  margin: -10px;
-  text-align: center;
-  display: block;
-  font-weight: bold;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-} */
-
-/* MENU ON BOTTOM, MOBILE VERSION */
-
+/* MOBILE VERSION, MENU ON BOTTOM */
 @media only screen and (max-width: 690px) {
   #headshot {
     width: 90px;
@@ -528,12 +490,12 @@ img.image:hover {
     margin: 10px 0px;
   }
 
-  .pop, .single-pop {
+  .pop,
+  .single-pop {
     font-variant: initial;
     line-height: 0px;
     font-weight: bold;
     font-size: 1em;
     color: #999999;
   }
-
 }
