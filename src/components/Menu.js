@@ -40,14 +40,14 @@ class Menu extends Component {
         />
 
         <ul>
-          <Link
+          {/* <Link
             to='/'
             onClick={e => this.handleClickMenu(e, '/')}
             className='router-link'>
             <li style={{ marginBottom: '15px' }}>
               {'{'} null {'}'}
             </li>
-          </Link>
+          </Link> */}
           <Link
             to='/projs'
             onClick={e => this.handleClickMenu(e, '/projs')}

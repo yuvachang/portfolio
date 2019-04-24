@@ -65,6 +65,21 @@ const AboutMe = () => {
           <header className='about header'>skills</header>
           <p className='about p pointer'>{highlightEachWord(skills)}</p>
         </div>
+
+        <div className='card'>
+          <header className='about header'>resume</header>
+          <p className='about p'>
+            <a href='../images/YuvaChangResume.pdf' target='_blank' style={{  textDecoration: 'none', color: 'grey' }}>
+              <div className='card button'>
+                <img
+                  src='../images/download-icon.svg'
+                  className='proj-media-icon'
+                />
+                Download PDF
+              </div>
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   )

@@ -46,29 +46,44 @@ class Projs extends Component {
         />
 
         <div className='card'>
-          <header className='proj header'>ezsplit</header>
-          <img
-            className='proj-pic'
-            src='../images/ezsplit.PNG'
-            onClick={() => this.openPhoto('../images/ezsplit.PNG', null)}
-          />
+          <header className='proj header'>EZsplit</header>
+          <a href='https://ezsplit.herokuapp.com' target='_blank'>
+            <img className='proj-media-icon' src='../images/heroku.png' />
+          </a>
+          <a href='https://github.com/EZSplit/EZSplit' target='_blank'>
+            <img className='proj-media-icon' src='../images/ghlogo.svg' />
+          </a>
+            <img
+              className='proj-pic-container'
+              src='../images/ezsplit.PNG'
+              onClick={() => this.openPhoto('../images/ezsplit.PNG', null)}
+            />
           <p className='about p'>
-            ezsplit is a bill-splitting app to manage and itemize receipts for
-            shared purchases amongst groups. Users can together edit a single
-            receipt across different devices and claim items to build an
-            accruing IOU towards the person who paid the bill.
+            EZsplit is a bill-splitting app to manage and itemize receipts for
+            shared purchases amongst groups. Users can edit a single receipt
+            together in real-time across different devices to claim items and
+            build an accruing IOU towards the person who paid the bill.
             <br />
             <br />
-            Contributions:
+            Features:
             <br />
+            • Google OAUTH login using Express and Passport.js and local user
+            login • Live receipt editing built with React, Redux, and Socket.io
+            • Ability to add, remove, and save receipts, groups, friends, and
+            receipt images, with MongoDB backend. • Track spendings and IOUs
+            with thunk-fetched data.
+            <br />
+            <br />
+            Some contributions:
             <br />
             • Implemented OCR API on backend and routes for parsing and handling
             receipt data as JSON responses.
             <br />
             • Created MongoDB schemas and queries for handling image, users, and
             groups data.
-            <br />• Wrote front-end components and logic for retrieving
-            displaying and calculating debts and data.
+            <br />
+            • Wrote front-end components and logic for retrieving displaying and
+            calculating debts and data.
             <br />
             <br />
             Please checkout our project video{' '}
@@ -80,7 +95,8 @@ class Projs extends Component {
                 here
               </a>
             </span>
-            .
+            , and give it a try the next time you have to split a bill!
+            <br />
             <br />
             Built using the MERN stack (MongoDb, Express, React, Node.js).
           </p>
@@ -88,7 +104,12 @@ class Projs extends Component {
 
         <div className='card'>
           <header className='proj header'>another github browser</header>
-          <div className='proj-pic' src='../images/ezsplit.PNG'>
+          <a
+            href='https://github.com/yuvachang/stackathon/tree/master/AnotherGitHubBrowser'
+            target='_blank'>
+            <img className='proj-media-icon' src='../images/ghlogo.svg' />
+          </a>
+          <div className='proj-pic-container' src='../images/ezsplit.PNG'>
             <img
               src='../images/ghb1.png'
               className='proj-picture'
@@ -121,11 +142,6 @@ class Projs extends Component {
             while moving within the history stack.
             <br />
             <br />
-            <a
-              href='https://github.com/yuvachang/stackathon/tree/master/AnotherGitHubBrowser'
-              target='_blank'>
-              <img style={{ width: '25px'}} src='../images/ghlogo.svg' />
-            </a>
           </p>
         </div>
       </div>

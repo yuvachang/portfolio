@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
-import { AboutMe, Pics, Projs, Resume } from './index'
+import { AboutMe, Pics, Projs } from './index'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import './style.css'
 
@@ -16,7 +16,6 @@ export default function Routes(props) {
           <Route exact path='/' component={() => null} />
           <Route path='/pics' component={Pics} />
           <Route path='/projs' component={Projs} />
-          {/* <Route path='/resume' component={Resume} /> */}
           <Route path='/about' component={AboutMe} />
           {/* <Route component={() => <div>404 Not found </div>} /> */}
           <Redirect from='*' to='/' component={() => null} />

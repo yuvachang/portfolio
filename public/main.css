@@ -148,7 +148,7 @@ a.link {
   transform: scale(1.5);
   filter: invert(0.4);
   left: 57px;
-  z-index: 30;
+  z-index: 333;
   transition: opacity 0.5s 0.25s, width 0s, z-index 0s, transform 0.5s 0.25s;
 }
 
@@ -180,14 +180,15 @@ a.link {
   transform: rotate(-90deg) scale(2);
   filter: invert(0.4);
   left: 57px;
-  z-index: 30;
+  z-index: 3333;
   transition: 1.2s;
 }
 
-#close:hover {
-  cursor: pointer;
-  transform: scale(2.2);
-}
+  #close:hover {
+    cursor: pointer;
+    transform: scale(2.2);
+    transition: transform 1s;
+  }
 
 .menu {
   width: 200px;
@@ -220,6 +221,7 @@ a.link {
 .menu ul {
   text-align: left;
   list-style: none;
+  top: 30vh;
   padding-right: 02em;
   padding-top: 5em;
 }
@@ -249,6 +251,13 @@ a.link {
   border-radius: 10px;
   padding: 1.5em;
   margin: 1.5em 0px;
+}
+
+.card.button {
+  background-color: #272727;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (hover: hover) {
@@ -421,13 +430,25 @@ a.link {
   font-size: 1.3em;
 }
 
-.proj-pic {
+.proj-pic-container {
   display:flex;
   justify-content: center;
   flex-wrap: wrap;
   padding: 15px;
   width: 90%;
   opacity: 0.8;
+}
+
+.proj-pic-container:hover {
+  cursor: pointer;
+}
+
+.proj-media-icon {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  filter: invert(0.5);
+  /* opacity: 0.8; */
 }
 
 .proj-picture {
@@ -452,7 +473,7 @@ a.link {
   /* font-family: 'Amatic SC', cursive; */
   font-family: 'Indie Flower', cursive;
   font-size: 1.6em;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .about.p {
