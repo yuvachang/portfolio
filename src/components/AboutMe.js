@@ -56,6 +56,21 @@ const highlightEachWord = text => {
 const AboutMe = () => {
   return (
     <div className='page-container'>
+      <div className='media-icons' >
+        <a href='https://issuu.com/skwrl/docs/pportfolio' target='_blank'>
+          <img src='../images/issuu-logo.png' className='proj-media-icon' />
+        </a>
+        <a href='https://github.com/yuvachang' target='_blank'>
+          <img src='../images/ghlogo.svg' className='proj-media-icon' />
+        </a>
+        <a href='https://www.linkedin.com/in/yuvachang/' target='_blank'>
+          <img src='../images/linkedin-logo.svg' className='proj-media-icon' />
+        </a>
+        <a href='https://www.instagram.com/mrskwrl/' target='_blank'>
+          <img src='../images/instagram-logo.svg' className='proj-media-icon' />
+        </a>
+      </div>
+
       <div className='about-me'>
         <div className='card'>
           <header className='about header'>who am i</header>
