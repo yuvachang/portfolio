@@ -102,7 +102,9 @@ class Nav extends Component {
                 ? 'headshot-div aboutme'
                 : 'headshot-div open-menu'
               : 'headshot-div'
-          }>
+          }
+          style={window.location.pathname === '/'?{flexDirection:'row'}:{}}
+          >
           {/* HEADSHOT */}
           <img
             className={
@@ -129,11 +131,11 @@ class Nav extends Component {
             style={{
               fontSize: '1.5em',
               width: '0px',
-              textAlign: 'center',
-              paddingLeft: '1em',
+              // textAlign: 'center',
+              // paddingLeft: '1em',
               display: 'flex',
               alignItems: 'center'}}>
-            {'<<CLICK'}
+            &nbsp;&nbsp;{'<<CLICK'}
           </div>
         </div>
         <Menu
