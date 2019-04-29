@@ -28,11 +28,11 @@ export default class SinglePhoto extends Component {
             src={'../images/close.svg'}
             alt='image not found'
             id='close'
-            onClick={this.props.closeMenu}
+            onClick={this.props.closePhoto || this.props.closeMenu}
           />
         </div>
 
-        {this.props.idx && (
+        {this.props.idx!==null && (
           <div
             className='arrow'
             style={{ left: '3vw' }}
@@ -57,7 +57,7 @@ export default class SinglePhoto extends Component {
             }}
           />
         </div>
-        {this.props.idx && (
+        {this.props.idx!==null && (
           <div
             className='arrow'
             style={{ right: '3vw' }}

@@ -72,9 +72,14 @@ class Menu extends Component {
               {'{'}about:me{'}'}
             </li>
           </Link>
-          <li>
-            {'{'}contact{'}'}
-          </li>
+          <Link
+            to='/contact'
+            onClick={e => this.handleClickMenu(e, '/contact')}
+            className='router-link'>
+            <li>
+              {'{'}contact{'}'}
+            </li>
+          </Link>
         </ul>
       </div>
     )

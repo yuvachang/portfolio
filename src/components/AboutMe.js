@@ -17,6 +17,7 @@ const pop = text => {
           word = word + ' ' + textArr[idx + 1]
         }
         if (textArr[idx - 1] === 'software' && word.includes('engineer')) return
+        console.log(wordOnly)
         return (
           <span className='pop' key={word + idx}>
             <a
@@ -24,12 +25,17 @@ const pop = text => {
               target='_blank'
               href={
                 wordOnly === 'mern' || wordOnly === 'pern'
-                  ? `https://www.google.com/search?q=${word}+stack`
-                  : `https://www.google.com/search?q=${word}`
+                  ? `https://www.google.com/search?q=${wordOnly}+stack`
+                  : `https://www.google.com/search?q=${wordOnly}`
               }>
               {word}
             </a>
           </span>
+        )
+      }
+      if (word==='<br/>') {
+        return (
+          <br/>
         )
       }
       return word

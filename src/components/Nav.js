@@ -70,12 +70,13 @@ class Nav extends Component {
 
     if (window.location.pathname !== '/') {
       this.setState({
-        pathname: window.location.pathname.slice(1),
+        pathname: window.location.pathname,
       })
     }
   }
 
   componentDidUpdate = prevProps => {
+    console.log('updated')
     if (prevProps.location !== window.location) {
       if (this.state.pathname !== window.location.pathname) {
         this.updateScreenWidth()
