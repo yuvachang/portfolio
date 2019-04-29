@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import Menu from './Menu'
+import { NavButtons, Menu } from './index'
 
 class Nav extends Component {
   state = {
@@ -11,16 +11,10 @@ class Nav extends Component {
   }
 
   openMenu = e => {
-    console.log(e.target)
     if (this.state.menu && e.target.id === 'headshot') return
     this.setState({
       menu: !this.state.menu,
     })
-    // else {
-    //   this.setPathname({
-    //     menu: true
-    //   })
-    // }
   }
 
   closeMenu = e => {
@@ -36,7 +30,6 @@ class Nav extends Component {
   }
 
   setPathname = content => {
-    console.log(content)
     this.setState({
       pathname: content,
     })
@@ -57,7 +50,6 @@ class Nav extends Component {
   }
 
   updateScreenWidth = e => {
-    console.log(e)
     this.setState({
       screenWidth: window.innerWidth,
     })
@@ -76,7 +68,6 @@ class Nav extends Component {
   }
 
   componentDidUpdate = prevProps => {
-    console.log('updated')
     if (prevProps.location !== window.location) {
       if (this.state.pathname !== window.location.pathname) {
         this.updateScreenWidth()
@@ -103,6 +94,7 @@ class Nav extends Component {
             onClick={this.openMenu}
           />
         )}
+
         <div
           className={
             this.state.menu || this.state.pathname.length > 1
@@ -111,6 +103,7 @@ class Nav extends Component {
                 : 'headshot-div open-menu'
               : 'headshot-div'
           }>
+          {/* HEADSHOT */}
           <img
             className={
               this.state.menu && window.location.pathname === '/'
@@ -122,20 +115,33 @@ class Nav extends Component {
             alt='image not found'
             onClick={this.openMenu}
           />
+
+          {/* NAMETAG */}
           <div
             className={window.location.pathname === '/about' ? '' : 'hide'}
             id='nametag'>
             yuva chang
           </div>
+          {/* CLICK */}
+          <div
+            className={window.location.pathname === '/'&&!this.state.menu ? '' : 'hide'}
+            id='nametag'
+            style={{
+              fontSize: '1.5em',
+              width: '0px',
+              textAlign: 'center',
+              paddingLeft: '1em',
+              display: 'flex',
+              alignItems: 'center'}}>
+            {'<<CLICK'}
+          </div>
         </div>
-
         <Menu
           visible={this.state.menu}
           closeMenu={this.closeMenu}
           setPathname={this.setPathname}
           pathname={this.state.pathname}
         />
-
         <div
           id='backtotop'
           className={this.state.showBackToTop ? '' : 'closed'}
@@ -145,6 +151,7 @@ class Nav extends Component {
           top
         </div>
 
+        {/* LOWER RIGHT MENU BUTTON */}
         {this.state.screenWidth > 700 ? (
           <div
             id='menu-button'
@@ -156,7 +163,13 @@ class Nav extends Component {
           <img
             src='../images/hamburger.svg'
             id='menu-button'
-            className={this.state.menu ? 'icon closed' : this.state.showBackToTop ? 'icon' : ''}
+            className={
+              this.state.menu
+                ? 'icon closed'
+                : this.state.showBackToTop
+                ? 'icon'
+                : ''
+            }
             onClick={this.openMenu}
           />
         )}
@@ -165,5 +178,6 @@ class Nav extends Component {
   }
 }
 
-// export default withRouter(Nav)
-export default Nav
+// withRouter will trigger componentDidUpdate with props.location
+export default withRouter(Nav)
+// export default Nav

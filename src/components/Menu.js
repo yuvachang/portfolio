@@ -53,7 +53,7 @@ class Menu extends Component {
             onClick={e => this.handleClickMenu(e, '/projs')}
             className='router-link'>
             <li>
-              {'{'}projects{'}'}
+              projects
             </li>
           </Link>
           <Link
@@ -61,7 +61,7 @@ class Menu extends Component {
             onClick={e => this.handleClickMenu(e, '/pics')}
             className='router-link'>
             <li>
-              {'{'}photography{'}'}
+              photography
             </li>
           </Link>
           <Link
@@ -69,7 +69,7 @@ class Menu extends Component {
             onClick={e => this.handleClickMenu(e, '/about')}
             className='router-link'>
             <li>
-              {'{'}about:me{'}'}
+              about me
             </li>
           </Link>
           <Link
@@ -77,7 +77,7 @@ class Menu extends Component {
             onClick={e => this.handleClickMenu(e, '/contact')}
             className='router-link'>
             <li>
-              {'{'}contact{'}'}
+              contact
             </li>
           </Link>
         </ul>

@@ -63,23 +63,26 @@ const AboutMe = () => {
   return (
     <div className='page-container'>
       <div className='media-icons' >
-        <a href='https://issuu.com/skwrl/docs/pportfolio' target='_blank'>
+        <a href='https://issuu.com/skwrl/docs/pportfolio' target='_blank' title='ISSUU portfolio'>
           <img src='../images/issuu-logo.png' className='proj-media-icon' />
         </a>
-        <a href='https://github.com/yuvachang' target='_blank'>
+        <a href='../images/YuvaChangResume.pdf' target='_blank' title='Resume.PDF'>
+          <img src='../images/document-logo.svg' className='proj-media-icon' />
+        </a>
+        <a href='https://github.com/yuvachang' target='_blank' title='Github'>
           <img src='../images/ghlogo.svg' className='proj-media-icon' />
         </a>
-        <a href='https://www.linkedin.com/in/yuvachang/' target='_blank'>
+        <a href='https://www.linkedin.com/in/yuvachang/' target='_blank' title='LinkedIn'>
           <img src='../images/linkedin-logo.svg' className='proj-media-icon' />
         </a>
-        <a href='https://www.instagram.com/mrskwrl/' target='_blank'>
+        <a href='https://www.instagram.com/mrskwrl/' target='_blank' title='Instagram'>
           <img src='../images/instagram-logo.svg' className='proj-media-icon' />
         </a>
       </div>
 
       <div className='about-me'>
         <div className='card'>
-          <header className='about header'>who am i</header>
+          <header className='about header'>about me</header>
           <p className='about p'>{pop(aboutme)}</p>
         </div>
         <div className='card'>

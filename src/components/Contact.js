@@ -17,20 +17,20 @@ export default class Contact extends Component {
   }
 
   handleChange = e => {
+    if (this.textareaNode.contains(e.target)) {
+      this.textareaNode.style.height = '1px'
+      this.textareaNode.style.height = `${this.textareaNode.scrollHeight}px`
+    }
+
     this.setState({
       [e.target.name]: e.target.value,
     })
-
-    if (this.textareaNode.contains(e.target)) {
-      console.log('height:', this.textareaNode.offsetHeight, 'scrollheight:', this.textareaNode.scrollHeight)
-      this.textareaNode.style.height = `${this.textareaNode.scrollHeight}px`
-    }
   }
 
   sendMessage = () => {
     const formData = new FormData()
     formData.append(NAME_ID, this.state.name)
-    formData.append(MESSAGE_ID, this.state.email)
+    formData.append(MESSAGE_ID, this.state.message)
     formData.append('emailAddress', this.state.emailAddress)
     axios
       .post(CORS_PROXY + GOOGLE_FORM_URL, formData)
@@ -41,7 +41,8 @@ export default class Contact extends Component {
           message: '',
         })
       })
-      .catch(() => {
+      .catch(error => {
+        console.log(error)
         this.setState({
           errorMessage: true,
         })
@@ -53,14 +54,10 @@ export default class Contact extends Component {
     this.setState({
       sent: true,
     })
-    window.setTimeout(() => {
-      this.setState({ sent: false })
-    }, 2000)
   }
 
   handleSubmit = async e => {
     e.preventDefault()
-    console.log('HANDLE SUBMIT', this.state)
     await this.sendMessage()
   }
 
@@ -69,12 +66,14 @@ export default class Contact extends Component {
       <div className='page-container'>
         <div className={!this.state.sent ? 'card' : 'card hidden'}>
           <header className='proj header'>Contact Me</header>
-          {this.state.errorMessage && 'ERROR'}
-          <form onSubmit={this.handleSubmit}>
+          <br />
+          {/* {this.state.errorMessage && 'ERROR'} */}
+          <form className='form' onSubmit={this.handleSubmit}>
             {/* <label>Email:</label> */}
             <input
               type='email'
               name='emailAddress'
+              required={true}
               value={this.state.emailAddress}
               placeholder='Email'
               onChange={this.handleChange}
@@ -83,6 +82,7 @@ export default class Contact extends Component {
             <input
               type='text'
               name='name'
+              required={true}
               value={this.state.name}
               placeholder='Name'
               onChange={this.handleChange}
@@ -91,6 +91,7 @@ export default class Contact extends Component {
             <textarea
               type='text'
               name='message'
+              required={true}
               value={this.state.message}
               placeholder='Enter a message'
               onChange={this.handleChange}
@@ -101,7 +102,13 @@ export default class Contact extends Component {
             <input type='submit' value='Submit' />
           </form>
         </div>
-        <div className={this.state.sent ? 'card' : 'card hidden'} />
+        <div
+          className={this.state.sent ? 'card' : 'card hidden'}
+          onClick={() => this.setState({ sent: false })}>
+          MESSAGE SENT!
+          <br />
+          click here to send another
+        </div>
       </div>
     )
   }
