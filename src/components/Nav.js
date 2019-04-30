@@ -103,8 +103,17 @@ class Nav extends Component {
                 : 'headshot-div open-menu'
               : 'headshot-div'
           }
-          style={window.location.pathname === '/'?{flexDirection:'row'}:{}}
-          >
+          style={
+            window.location.pathname === '/' ? { flexDirection: 'row' } : {}
+          }>
+          
+          {/* PROJECTS */}
+          <div
+            className={window.location.pathname === '/projs' ? '' : 'hide'}
+            id='nametag'>
+            projects
+          </div>
+
           {/* HEADSHOT */}
           <img
             className={
@@ -124,9 +133,12 @@ class Nav extends Component {
             id='nametag'>
             yuva chang
           </div>
+
           {/* CLICK */}
           <div
-            className={window.location.pathname === '/'&&!this.state.menu ? '' : 'hide'}
+            className={
+              window.location.pathname === '/' && !this.state.menu ? '' : 'hide'
+            }
             id='nametag'
             style={{
               fontSize: '1.5em',
@@ -134,16 +146,21 @@ class Nav extends Component {
               // textAlign: 'center',
               // paddingLeft: '1em',
               display: 'flex',
-              alignItems: 'center'}}>
-            &nbsp;&nbsp;{'<<CLICK'}
+              alignItems: 'center',
+            }}>
+            &nbsp;&nbsp;{'<<CLICK ME'}
           </div>
         </div>
+
+        {/* SLIDE OUT MENU */}
         <Menu
           visible={this.state.menu}
           closeMenu={this.closeMenu}
           setPathname={this.setPathname}
           pathname={this.state.pathname}
         />
+
+        {/* SHOW IF SCROLLED DOWN */}
         <div
           id='backtotop'
           className={this.state.showBackToTop ? '' : 'closed'}
@@ -153,7 +170,7 @@ class Nav extends Component {
           top
         </div>
 
-        {/* LOWER RIGHT MENU BUTTON */}
+        {/* LOWER RIGHT MENU BUTTON, WEB VS MOBILE */}
         {this.state.screenWidth > 700 ? (
           <div
             id='menu-button'

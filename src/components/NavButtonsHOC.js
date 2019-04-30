@@ -28,7 +28,6 @@ export default PageComponent => {
     }
 
     setPathname = content => {
-      console.log(content)
       this.setState({
         pathname: content,
       })

@@ -45,7 +45,7 @@ class Menu extends Component {
             onClick={e => this.handleClickMenu(e, '/')}
             className='router-link'>
             <li style={{ marginBottom: '15px' }}>
-              {'{'} null {'}'}
+              null
             </li>
           </Link> */}
           <Link

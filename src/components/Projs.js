@@ -46,18 +46,20 @@ class Projs extends Component {
         />
 
         <div className='card'>
-          <header className='proj header'>EZsplit</header>
+          <a href='https://ezsplit.herokuapp.com' target='_blank' style={{textDecoration: 'none', color: 'inherit'}}>
+            <header className='proj header'>EZsplit</header>
+          </a>
           <a href='https://ezsplit.herokuapp.com' target='_blank'>
             <img className='proj-media-icon' src='../images/heroku.png' />
           </a>
           <a href='https://github.com/EZSplit/EZSplit' target='_blank'>
             <img className='proj-media-icon' src='../images/ghlogo.svg' />
           </a>
-            <img
-              className='proj-pic-container'
-              src='../images/ezsplit.PNG'
-              onClick={() => this.openPhoto('../images/ezsplit.PNG', null)}
-            />
+          <img
+            className='proj-pic-container'
+            src='../images/ezsplit.PNG'
+            onClick={() => this.openPhoto('../images/ezsplit.PNG', null)}
+          />
           <p className='about p'>
             EZsplit is a bill-splitting app to manage and itemize receipts for
             shared purchases amongst groups. Users can edit a single receipt
@@ -68,9 +70,14 @@ class Projs extends Component {
             Features:
             <br />
             • Google OAUTH login using Express and Passport.js and local user
-            login • Live receipt editing built with React, Redux, and Socket.io
+            login 
+            <br />
+            • Live receipt editing built with React, Redux, and Socket.io
+            <br />
             • Ability to add, remove, and save receipts, groups, friends, and
-            receipt images, with MongoDB backend. • Track spendings and IOUs
+            receipt images, with MongoDB backend. 
+            <br />
+            • Track spendings and IOUs
             with thunk-fetched data.
             <br />
             <br />
@@ -103,7 +110,7 @@ class Projs extends Component {
         </div>
 
         <div className='card'>
-          <header className='proj header'>another github browser</header>
+          <header className='proj header'>Android Github Browser</header>
           <a
             href='https://github.com/yuvachang/stackathon/tree/master/AnotherGitHubBrowser'
             target='_blank'>

@@ -42,7 +42,7 @@ export default class Contact extends Component {
         })
       })
       .catch(error => {
-        console.log(error)
+        console.error(error)
         this.setState({
           errorMessage: true,
         })
@@ -65,7 +65,7 @@ export default class Contact extends Component {
     return (
       <div className='page-container'>
         <div className={!this.state.sent ? 'card' : 'card hidden'}>
-          <header className='proj header'>Contact Me</header>
+          <header className='proj header'>Send me a message!</header>
           <br />
           {/* {this.state.errorMessage && 'ERROR'} */}
           <form className='form' onSubmit={this.handleSubmit}>

@@ -17,7 +17,6 @@ const pop = text => {
           word = word + ' ' + textArr[idx + 1]
         }
         if (textArr[idx - 1] === 'software' && word.includes('engineer')) return
-        console.log(wordOnly)
         return (
           <span className='pop' key={word + idx}>
             <a
