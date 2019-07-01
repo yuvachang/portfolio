@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 
 export default class SinglePhoto extends Component {
-  clickListener = event => {
+  handleClickOutside = event => {
     if (event.target.id === 'large-photo' || event.target.className === 'arrow')
       return
     this.props.closePhoto()
   }
 
   componentDidMount() {
-    document.addEventListener('click', this.clickListener)
+    document.addEventListener('mousedown', this.handleClickOutside)
   }
   componentWillUnmount() {
-    document.removeEventListener('click', this.clickListener)
+    document.removeEventListener('mousedown', this.handleClickOutside)
   }
 
   render() {
@@ -26,16 +26,15 @@ export default class SinglePhoto extends Component {
         <div>
           <img
             src={'../images/close.svg'}
-            className='icon'
             alt='image not found'
             id='close'
             onClick={this.props.closePhoto || this.props.closeMenu}
           />
         </div>
 
-        {this.props.idx !== null && (
+        {this.props.idx!==null && (
           <div
-            className='icon arrow'
+            className='arrow'
             style={{ left: '3vw' }}
             onClick={() => this.props.openPhoto(null, this.props.idx - 1)}>
             {'<'}
@@ -58,9 +57,9 @@ export default class SinglePhoto extends Component {
             }}
           />
         </div>
-        {this.props.idx !== null && (
+        {this.props.idx!==null && (
           <div
-            className='icon arrow'
+            className='arrow'
             style={{ right: '3vw' }}
             onClick={() => this.props.openPhoto(null, this.props.idx + 1)}>
             {'>'}

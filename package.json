@@ -6,19 +6,22 @@
     "axios": "^0.18.0",
     "gh-pages": "^2.0.1",
     "history": "^4.9.0",
+    "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "2.1.8",
     "react-transition-group": "^3.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run react-start & npm run scss",
+    "react-start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "scss": "node-sass --watch \"./MainSass.scss\" --output \"./public/\" "
   },
   "eslintConfig": {
     "extends": "react-app"

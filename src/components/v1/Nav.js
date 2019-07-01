@@ -148,7 +148,7 @@ class Nav extends Component {
               display: 'flex',
               alignItems: 'center',
             }}>
-            &nbsp;&nbsp;{'<<CLICK ME'}
+            &nbsp;&nbsp;{'<<CLICK'}
           </div>
         </div>
 

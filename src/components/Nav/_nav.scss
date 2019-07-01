@@ -1,0 +1,149 @@
+@import '../variables';
+
+#nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+  height: 60px;
+
+  background-color: $ig-bg;
+  border-bottom: 1px solid $border-color;
+
+  position: relative;
+
+  & .title {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+  }
+}
+
+.nav {
+  &-menu {
+    position: relative;
+
+    width: 70vw;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid $border-color;
+
+    @media #{$mobile-width-m} {
+      position: absolute;
+
+      right: 0px;
+      border: none;
+
+      width: 50px;
+    }
+  }
+
+  &-links {
+    &-container {
+      position: relative;
+
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+
+      @media #{$mobile-width-m} {
+        overflow: hidden;
+        max-height: 150px;
+        transition: 0.3s;
+
+        position: absolute;
+
+        top: 43px;
+        right: 0;
+
+        width: 100vw;
+        height: 100px;
+
+        &.closed {
+          max-height: 0;
+          transition: 0.3s;
+        }
+      }
+    }
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    & > * {
+      width: 100%;
+      border-bottom: 1px solid $border-color;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    @media #{$mobile-width-m} {
+      flex-direction: column;
+
+      z-index: 44;
+
+      background-color: white;
+
+      border-bottom: 1px solid $border-color1;
+    }
+  }
+
+  &-link {
+    background-color: inherit;
+    transition: 0.3s;
+
+    &.selected {
+      background-color: white;
+      transition: 0.3s;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .bottom-marker-container {
+    position: absolute;
+
+    width: 100%;
+    height: 10px;
+
+    bottom: -10;
+  }
+
+  &-marker {
+    background-color: $border-color1;
+
+    width: 10%; // set with javascript
+    height: 100%;
+
+    left: 0; //set with javascript
+  }
+}
+
+.hamburger {
+  margin: 0 10px;
+  transition: 0.2s;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.3;
+      transition: 0.2s;
+    }
+  }
+  @media #{$mobile-width-m-min} {
+    max-width: 0;
+    visibility: hidden;
+  }
+}
