@@ -1,60 +1,59 @@
 import React from 'react'
-import { aboutme, keywords, skills } from '../../data/aboutme.js'
-import NavButtons from '../NavButtons.js'
+// import { aboutme, keywords, skills } from '../../data/aboutme.js'
 
-const pop = text => {
-  let regex = /[a-zA-Z0-9]/gi
-  let textArr = text.split(' ')
-  return textArr
-    .map((word, idx) => {
-      let wordOnly = word
-        .toLowerCase()
-        .match(regex)
-        .join('')
-      if (keywords.includes(wordOnly)) {
-        // check if phrase is 'software engineer' or 'software engineering'
-        if (word === 'software' && textArr[idx + 1].includes('engineer')) {
-          word = word + ' ' + textArr[idx + 1]
-        }
-        if (textArr[idx - 1] === 'software' && word.includes('engineer')) return
-        return (
-          <span className='pop' key={word + idx}>
-            <a
-              className='link'
-              target='_blank'
-              href={
-                wordOnly === 'mern' || wordOnly === 'pern'
-                  ? `https://www.google.com/search?q=${wordOnly}+stack`
-                  : `https://www.google.com/search?q=${wordOnly}`
-              }>
-              {word}
-            </a>
-          </span>
-        )
-      }
-      if (word === '<br/>') {
-        return <br />
-      }
-      return word
-    })
-    .reduce((prev, curr) => [prev, ' ', curr])
-}
+// const pop = text => {
+//   let regex = /[a-zA-Z0-9]/gi
+//   let textArr = text.split(' ')
+//   return textArr
+//     .map((word, idx) => {
+//       let wordOnly = word
+//         .toLowerCase()
+//         .match(regex)
+//         .join('')
+//       if (keywords.includes(wordOnly)) {
+//         // check if phrase is 'software engineer' or 'software engineering'
+//         if (word === 'software' && textArr[idx + 1].includes('engineer')) {
+//           word = word + ' ' + textArr[idx + 1]
+//         }
+//         if (textArr[idx - 1] === 'software' && word.includes('engineer')) return
+//         return (
+//           <span className='pop' key={word + idx}>
+//             <a
+//               className='link'
+//               target='_blank'
+//               href={
+//                 wordOnly === 'mern' || wordOnly === 'pern'
+//                   ? `https://www.google.com/search?q=${wordOnly}+stack`
+//                   : `https://www.google.com/search?q=${wordOnly}`
+//               }>
+//               {word}
+//             </a>
+//           </span>
+//         )
+//       }
+//       if (word === '<br/>') {
+//         return <br />
+//       }
+//       return word
+//     })
+//     .reduce((prev, curr) => [prev, ' ', curr])
+// }
 
-const highlightEachWord = text => {
-  return text
-    .split(', ')
-    .map((word, idx) => (
-      <span className='single-pop' key={word + idx}>
-        <a
-          className='link'
-          target='_blank'
-          href={`https://www.google.com/search?q=${word}`}>
-          {word}
-        </a>
-      </span>
-    ))
-    .reduce((prev, curr) => [prev, ', ', curr])
-}
+// const highlightEachWord = text => {
+//   return text
+//     .split(', ')
+//     .map((word, idx) => (
+//       <span className='single-pop' key={word + idx}>
+//         <a
+//           className='link'
+//           target='_blank'
+//           href={`https://www.google.com/search?q=${word}`}>
+//           {word}
+//         </a>
+//       </span>
+//     ))
+//     .reduce((prev, curr) => [prev, ', ', curr])
+// }
 
 const AboutMe = () => {
   return (
@@ -76,13 +75,9 @@ const AboutMe = () => {
         where I can learn and develop more skills to continue pursuing my
         passion for design and making.
       </div>
-      <div className='about-header'>Why change career?</div>
+      <div className='about-header'>Why change?</div>
       <div className='about-body'>
-        Why did I leave architecture? The short answer is, "I haven\'t, really."
-        The longer answer is: I want to pursue more tangible and fair-market
-        design in an increasingly digital world. My design thinking and
-        perception of architecture will never leave me, but I wish to focus my
-        skills in a different way more meaningful to myself.
+        Why leave architecture? I want to pursue more tangible and fair-market design in an increasingly digital world. My design thinking and perception of architecture will never leave me, but I wish to focus my skills in a different way more meaningful to myself.
       </div>
     </div>
   )

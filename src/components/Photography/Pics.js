@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { thumbnails } from '../data/photoUrls'
+import { thumbnails } from '../../data/photoUrls'
 import SinglePhoto from './SinglePhoto'
-import NavButtons from './NavButtonsHOC'
 
 class Pics extends Component {
   state = {

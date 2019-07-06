@@ -57,6 +57,20 @@ a {
   }
 }
 
+.alink {
+  font-size: 0.75em;
+  color: $font-color-l;
+  text-decoration: underline;
+
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      color: blue;
+      transition: 0.3s;
+    }
+  }
+}
+
 img {
   &.icon {
     width: 25px;

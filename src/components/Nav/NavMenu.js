@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connect, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class NavMenu extends Component {
   state = {
@@ -29,13 +29,12 @@ class NavMenu extends Component {
 
   clickListener = e => {
     // e.stopPropagation()
-    console.log(this.state.open)
     if (
       !e.target.contains(this.menu) &&
       !e.target.className.includes('hamburger') &&
       !!this.state.open
     ) {
-      console.log('closingmenu', this.state.open)
+      // console.log('closingmenu', this.state.open)
       this.toggleMenu('close')
     }
   }
@@ -88,13 +87,10 @@ class NavMenu extends Component {
 
         <img
           src={open ? '/images/close.svg' : '/images/hamburger.svg'}
+          alt='menu'
           className='hamburger icon clickable'
           onClick={this.toggleMenu}
         />
-
-        {/* <div className='bottom-marker-container'>
-          <div className='nav-marker' />
-        </div> */}
       </div>
     )
   }

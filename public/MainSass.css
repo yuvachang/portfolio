@@ -34,6 +34,16 @@ a {
   a:active {
     color: darkgrey; }
 
+.alink {
+  font-size: 0.75em;
+  color: #656565;
+  text-decoration: underline; }
+  @media (hover: hover) {
+    .alink:hover {
+      cursor: pointer;
+      color: blue;
+      transition: 0.3s; } }
+
 img.icon {
   width: 25px;
   height: 25px;
@@ -97,9 +107,8 @@ button,
   border-bottom: 1px solid #ededed;
   position: relative; }
   #nav .title {
-    font-family: 'Dosis', sans-serif;
-    font-size: 1.5em;
-    letter-spacing: 2px; }
+    margin: 0;
+    border-bottom: none; }
 
 .nav-menu {
   position: relative;
@@ -152,10 +161,10 @@ button,
 
 .nav-link {
   background-color: inherit;
-  transition: 0.3s; }
+  border: none; }
   .nav-link.selected {
     background-color: white;
-    transition: 0.3s; }
+    border: 1px solid #e0e0e0; }
   @media (hover: hover) {
     .nav-link:hover {
       cursor: pointer; } }
@@ -272,7 +281,9 @@ button,
   font-family: 'Dosis', sans-serif;
   font-size: 1.15em;
   letter-spacing: 2px;
-  margin: 10px 0; }
+  margin: 10px 0;
+  width: 100%;
+  text-align: center; }
 
 .about-body {
   color: #656565;
@@ -289,36 +300,46 @@ button,
   flex-direction: column;
   align-items: center;
   padding: 0 10vw; }
+  .projects hr {
+    width: 100%;
+    border-top: 1px solid #ededed; }
+    @media only screen and (min-width: 600px) {
+      .projects hr {
+        display: none; } }
 
 .proj-card {
   position: relative;
   display: flex;
-  max-height: 300px;
   width: 100%;
   margin: 25px 0; }
-  .proj-card .proj-image {
-    border: 1px solid #e0e0e0;
-    padding: 4px;
-    width: 40%;
-    min-height: 250px; }
-    @media (hover: hover) {
-      .proj-card .proj-image {
-        cursor: pointer; } }
 
-.proj-title {
-  color: #656565;
-  margin-bottom: 10px;
-  font-size: 1.1em; }
+.proj-image {
+  border: 1px solid #e0e0e0;
+  padding: 4px;
+  box-sizing: border-box;
+  width: 40%;
+  object-fit: contain; }
+  @media (hover: hover) {
+    .proj-image {
+      cursor: pointer; } }
 
 .proj-about {
   color: #656565;
-  font-size: 0.9em;
   margin-left: 30px;
   margin-top: 10px;
-  text-align: left;
-  line-height: 20px; }
+  text-align: left; }
+
+.proj-title {
+  color: #656565;
+  font-size: 1.1em; }
+
+.proj-body {
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  line-height: 22px; }
 
 .proj-techs {
+  color: #232323;
   font-size: 0.8em;
   padding: 6px 0; }
 
@@ -331,3 +352,51 @@ button,
     width: 110px; }
     .proj-links .button:first-child {
       margin-right: 30px; }
+
+@media only screen and (max-width: 600px) {
+  .proj-card {
+    flex-direction: column;
+    max-height: none; }
+  .proj-image {
+    width: 100%; }
+  .proj-about {
+    margin-left: 0; } }
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%; }
+
+.contact-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: 1s; }
+  .contact-me.hidden {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    transition: opacity 1s, height 1s, visibility 0s 1s; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%; }
+
+input,
+textarea {
+  border: 1px solid #e0e0e0;
+  padding: 4px;
+  margin: 4px 0;
+  width: 100%;
+  max-width: 350px; }
+
+.error-msg {
+  font-size: 0.8em;
+  color: red; }

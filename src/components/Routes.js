@@ -1,26 +1,19 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
-import createHistory from 'history/createBrowserHistory'
-import { AboutMe, Pics, Projects, Contact } from './index'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import React from 'react'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import { AboutMe, Pics, Projects, ContactMe } from './index'
 
-const history = createHistory()
-
-export default function Routes(props) {
+export default function Routes() {
   return (
     <Route
-      render={({ location }) => (
-        // <CSSTransition key={location.key} classNames='fade' timeout={300}>
+      render={() => (
         <Switch>
           <Route exact path='/' component={AboutMe} />
           <Route path='/photography' component={Pics} />
           <Route path='/projects' component={Projects} />
           <Route path='/about' component={AboutMe} />
-          <Route path='/contact' component={Contact} />
-          {/* <Route component={() => <div>404 Not found </div>} /> */}
+          <Route path='/contact' component={ContactMe} />
           <Redirect from='*' to='/' component={() => null} />
         </Switch>
-        // </CSSTransition>
       )}
     />
   )

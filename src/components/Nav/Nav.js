@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import { NavButtons, Menu } from '../index'
 import NavMenu from './NavMenu'
 
 class Nav extends Component {

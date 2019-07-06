@@ -14,9 +14,11 @@
   position: relative;
 
   & .title {
-    font-family: 'Dosis', sans-serif;
-    font-size: 1.5em;
-    letter-spacing: 2px;
+    // font-family: 'Dosis', sans-serif;
+    // font-size: 1.5em;
+    // letter-spacing: 2px;
+    margin: 0;
+    border-bottom: none;
   }
 }
 
@@ -99,11 +101,11 @@
 
   &-link {
     background-color: inherit;
-    transition: 0.3s;
+    border: none;
 
     &.selected {
       background-color: white;
-      transition: 0.3s;
+      border: 1px solid $border-color1;
     }
 
     @media (hover: hover) {

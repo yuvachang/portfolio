@@ -18,7 +18,7 @@ class LinksAndFiles extends Component {
   componentWillUnmount = () => {}
 
   render() {
-    const { currentMedia, href } = this.state
+    // const { currentMedia, href } = this.state
     return (
       <div className='links-and-files'>
         {/* <div className='media-icons'>
@@ -107,35 +107,56 @@ class LinksAndFiles extends Component {
           <div className='button-message'>ISSUU portfolio</div>
         </a> */}
         <div className='media-icons'>
-          <a href='https://github.com/yuvachang' target='_blank' title='Github'>
-            <img src='../images/ghlogo.svg' className='icon' />
+          <a
+            href='https://github.com/yuvachang'
+            rel='noopener noreferrer'
+            target='_blank'
+            title='Github'>
+            <img
+              src='../images/icons/ghlogo.svg'
+              alt='github'
+              className='icon'
+            />
           </a>
           <a
             href='https://www.linkedin.com/in/yuvachang/'
+            rel='noopener noreferrer'
             target='_blank'
             title='LinkedIn'>
-            <img src='../images/linkedin-logo.svg' className='icon' />
+            <img
+              src='../images/icons/linkedin-logo.svg'
+              alt='linkedin'
+              className='icon'
+            />
           </a>
           <a
             href='https://issuu.com/skwrl/docs/pportfolio'
+            rel='noopener noreferrer'
             target='_blank'
             title='ISSUU portfolio'>
             <img
-              src='../images/issuu-logo.png'
+              src='../images/icons/issuu-logo.png'
+              alt='issuu'
               className='icon'
               style={{ width: '21px', height: '21px' }}
             />
           </a>
           <a
             href='https://www.instagram.com/mrskwrl/'
+            rel='noopener noreferrer'
             target='_blank'
             title='Instagram'>
-            <img src='../images/instagram-logo.svg' className='icon' />
+            <img
+              src='../images/icons/instagram-logo.svg'
+              alt='instagram'
+              className='icon'
+            />
           </a>
         </div>
         <a
           className='button'
           href='../images/YuvaChangResume.pdf'
+          rel='noopener noreferrer'
           target='_blank'>
           resume
         </a>
