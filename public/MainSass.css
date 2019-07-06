@@ -191,6 +191,7 @@ button,
   @media only screen and (min-width: 600px) {
     .hamburger {
       max-width: 0;
+      margin: 0;
       visibility: hidden; } }
 
 #profile-pic-container {

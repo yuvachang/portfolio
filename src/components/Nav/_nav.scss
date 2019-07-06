@@ -146,6 +146,8 @@
   }
   @media #{$mobile-width-m-min} {
     max-width: 0;
+    margin: 0;
+
     visibility: hidden;
   }
 }
