@@ -102,6 +102,14 @@ export default class ContactMe extends Component {
       <div className='contact-container'>
         <div className={`contact-me ${sent ? 'hidden' : ''}`}>
           <div className='title'>Email me</div>
+          <div className='text'>
+            at{' '}
+            <a href='mailto: hello@yuvachang.com' target='_top'>
+              hello@yuvachang.com
+            </a>
+            , <br />
+            or send me a message here!
+          </div>
           {error && (
             <div className='error-msg'>
               <br />

@@ -25,6 +25,25 @@
     visibility: hidden;
     transition: opacity 1s, height 1s, visibility 0s 1s;
   }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .text {
+    color: $font-color-l;
+    font-size: 0.9em;
+    line-height: 20px;
+
+    text-align: center;
+
+    width: 100%;
+    max-width: 350px;
+
+    a {
+      color: $font-color;
+    }
+  }
 }
 
 form {
