@@ -547,6 +547,17 @@ button,
     height: 0;
     visibility: hidden;
     transition: opacity 1s, height 1s, visibility 0s 1s; }
+  .contact-me .title {
+    margin-bottom: 10px; }
+  .contact-me .text {
+    color: #656565;
+    font-size: 0.9em;
+    line-height: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px; }
+    .contact-me .text a {
+      color: #232323; }
 
 form {
   display: flex;
