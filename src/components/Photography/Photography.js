@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { thumbnails } from '../../data/photoUrls'
 import SinglePhoto from './SinglePhoto'
 
-class Pics extends Component {
+class Photography extends Component {
   state = {
     photo: '',
-    idx: 0,
+    idx: '0',
     isOpen: false,
   }
 
@@ -31,46 +31,54 @@ class Pics extends Component {
 
   closePhoto = () => {
     this.setState({
+      // photo: '',
+      // idx: 0,
       isOpen: false,
     })
   }
 
   render() {
+    const { photo, idx, isOpen } = this.state
+
     return (
-      <div className='page-container pics'>
+      <div className='photos-container'>
+        <div className='title'>Photography</div>
+
         <div className='photos'>
           <SinglePhoto
-            photo={this.state.photo}
-            isOpen={this.state.isOpen}
+            photo={photo}
+            isOpen={isOpen}
             openPhoto={this.openPhoto}
             closePhoto={this.closePhoto}
-            idx={this.state.idx}
+            idx={idx}
           />
 
           {thumbnails.map((url, idx) => {
             return (
-              <div key={url} className='photo-thumb-container'>
+              <div key={url} className='photos-thumbnail-container'>
                 <img
+                  alt='thumbnail'
                   src={url}
-                  className='photo-thumb'
+                  className='photos-thumbnail'
                   onClick={() => this.openPhoto(url, idx)}
                 />
               </div>
             )
           })}
+
           {/* fill in last row, to keep last row flex-wrap left-aligned */}
-          <div className='filling-empty-space-thumbs' />
-          <div className='filling-empty-space-thumbs' />
-          <div className='filling-empty-space-thumbs' />
-          <div className='filling-empty-space-thumbs' />
-          <div className='filling-empty-space-thumbs' />
-          <div className='filling-empty-space-thumbs' />
-          <div className='filling-empty-space-thumbs' />
-          <div className='filling-empty-space-thumbs' />
+          <div className='thumbnail-filler' />
+          <div className='thumbnail-filler' />
+          <div className='thumbnail-filler' />
+          <div className='thumbnail-filler' />
+          <div className='thumbnail-filler' />
+          <div className='thumbnail-filler' />
+          <div className='thumbnail-filler' />
+          <div className='thumbnail-filler' />
         </div>
       </div>
     )
   }
 }
 
-export default Pics
+export default Photography

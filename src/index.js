@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom'
 import App from './components/App'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter } from 'react-router-dom'
-import history from './history'
 
 ReactDOM.render(
-  <BrowserRouter history={history}>
+  <BrowserRouter>
     <App />
   </BrowserRouter>,
   document.getElementById('root')

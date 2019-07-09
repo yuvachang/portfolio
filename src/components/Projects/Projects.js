@@ -4,7 +4,7 @@ class Projects extends Component {
   render() {
     return (
       <div className='projects'>
-        {/* <div className='title'>Projects</div> */}
+        <div className='title'>Projects</div>
 
         <div className='proj-card'>
           <img className='proj-image' alt='proj-screenshot' src='/images/projs/webpage_pic.png' />
@@ -74,6 +74,8 @@ class Projects extends Component {
             </div>
           </div>
         </div>
+        
+        <hr />
 
         <div className='proj-card'>
           <img className='proj-image' alt='proj-screenshot' src='/images/projs/ezsplit.PNG' />
@@ -111,6 +113,8 @@ class Projects extends Component {
             </div>
           </div>
         </div>
+        
+        <hr />
 
         <div className='proj-card'>
           <img className='proj-image' alt='proj-screenshot' src='/images/projs/ghb-c.jpg' />

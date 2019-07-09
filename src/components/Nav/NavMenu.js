@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 class NavMenu extends Component {
   state = {
-    open: true,
+    open: false,
   }
 
   toggleMenu = action => {
@@ -28,13 +28,11 @@ class NavMenu extends Component {
   }
 
   clickListener = e => {
-    // e.stopPropagation()
     if (
       !e.target.contains(this.menu) &&
       !e.target.className.includes('hamburger') &&
       !!this.state.open
     ) {
-      // console.log('closingmenu', this.state.open)
       this.toggleMenu('close')
     }
   }
@@ -86,7 +84,7 @@ class NavMenu extends Component {
         </div>
 
         <img
-          src={open ? '/images/close.svg' : '/images/hamburger.svg'}
+          src={open ? '/images/icons/close.svg' : '/images/icons/hamburger.svg'}
           alt='menu'
           className='hamburger icon clickable'
           onClick={this.toggleMenu}

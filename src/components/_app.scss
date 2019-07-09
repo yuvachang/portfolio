@@ -14,7 +14,7 @@
   align-content: center;
 
   #routes {
-    overflow-y: scroll;
+    // overflow-y: scroll;
     overflow-x: hidden;
 
     flex: 1;
@@ -22,14 +22,11 @@
 
     background-color: $app-bg;
 
-    & > * {
-      padding-top: 1em;
-      flex: 1;
+    @media #{$mobile-width-m-min} {
+      & > * {
+        padding-top: 2em;
+      }
     }
-
-    // .home {
-    //   flex: 1;
-    // }
 
     &::-webkit-scrollbar {
       width: 2px;
@@ -45,7 +42,6 @@ a {
 
   &:visited {
     color: inherit;
-    // color: #ccc;
   }
   &:hover {
     cursor: pointer;
@@ -81,9 +77,6 @@ img {
     transition: 0.5s;
 
     &.selected {
-      // height: 28px;
-      // width: 28px;
-
       opacity: 0.66;
 
       transition: 0.5s;
@@ -139,6 +132,39 @@ button,
   border-bottom: 1px solid $border-color1;
 }
 
+.back-to-top {
+  border-top: 1.8px solid $border-color;
+
+  position: fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 25px;
+
+  text-align: center;
+
+  z-index: 99;
+
+  background-color: white;
+
+  opacity: 1;
+
+  transition: height 0.3s, opacity 0.3s 0.3s;
+
+  &.hidden {
+    opacity: 0;
+    height: 0;
+
+    transition: height 0.3s 0.3s, opacity 0.3s;
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 
@@ -156,4 +182,13 @@ button,
       cursor: pointer;
     }
   }
+}
+
+* {
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+  -o-user-select: none;
+  user-select: none;
 }

@@ -87,7 +87,7 @@ export default class ContactMe extends Component {
     if (emailAddress) {
       if (!this.validate(emailAddress)) {
         this.setState({
-          error: 'Your email address doesn\'t seem valid',
+          error: "Your email address doesn't seem valid",
         })
         return
       }
@@ -100,52 +100,49 @@ export default class ContactMe extends Component {
     const { sent, error } = this.state
     return (
       <div className='contact-container'>
-      <div className={`contact-me ${sent ? 'hidden' : ''}`}>
-        <header className='header'>Send me a message!</header>
-        {error && (
-          <div className='error-msg'>
-            <br />
-            {error}
-          </div>
-        )}
-        <br />
-        <form className='form' onSubmit={this.handleSubmit}>
-          <input
-            type='email'
-            name='emailAddress'
-            value={this.state.emailAddress}
-            placeholder='Email'
-            onChange={this.handleChange}
-          />
-          <input
-            type='text'
-            name='name'
-            value={this.state.name}
-            placeholder='Name'
-            onChange={this.handleChange}
-          />
-          <textarea
-            type='text'
-            name='message'
-            value={this.state.message}
-            placeholder='Message'
-            onChange={this.handleChange}
-            ref={node => {
-              this.textareaNode = node
-            }}
-          />
-          <input type='submit' value='Submit' />
-        </form>
-       
-      </div>
-      <div
+        <div className={`contact-me ${sent ? 'hidden' : ''}`}>
+          <div className='title'>Email me</div>
+          {error && (
+            <div className='error-msg'>
+              <br />
+              {error}
+            </div>
+          )}
+          <br />
+          <form className='form' onSubmit={this.handleSubmit}>
+            <input
+              type='email'
+              name='emailAddress'
+              value={this.state.emailAddress}
+              placeholder='Email'
+              onChange={this.handleChange}
+            />
+            <input
+              type='text'
+              name='name'
+              value={this.state.name}
+              placeholder='Name'
+              onChange={this.handleChange}
+            />
+            <textarea
+              type='text'
+              name='message'
+              value={this.state.message}
+              placeholder='Message'
+              onChange={this.handleChange}
+              ref={node => {
+                this.textareaNode = node
+              }}
+            />
+            <input type='submit' value='Submit' />
+          </form>
+        </div>
+        <div
           className={`contact-me ${sent ? '' : 'hidden'}`}
           onClick={() => this.setState({ sent: false })}>
-          Thanks for the email!
+          <div className='title'>Thanks for the email!</div>
           <br />
-          <div className='alink'>
-          Send another
-          </div>
+          <div className='alink'>Send another</div>
         </div>
       </div>
     )

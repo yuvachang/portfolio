@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 
 export default class SinglePhoto extends Component {
   clickListener = event => {
-    if (event.target.id === 'large-photo' || event.target.className === 'arrow')
-      return
-    this.props.closePhoto()
+    if (
+      event.target.className === 'image-container' ||
+      event.target.className === 'photos-preview'
+    ) {
+      this.props.closePhoto()
+    }
   }
 
   componentDidMount() {
@@ -15,57 +18,50 @@ export default class SinglePhoto extends Component {
   }
 
   render() {
-    const pUrl = this.props.photo
+    const { isOpen, photo } = this.props
+    const pUrl = photo
     const url =
       pUrl[pUrl.length - 5] === 'l'
         ? pUrl.slice(0, -5).concat('h' + pUrl.slice(-4))
         : pUrl
-    // const url = this.props.photo
-    return (
-      <div className={this.props.isOpen ? 'single-photo-container' : 'no-show'}>
-        <div>
-          <img
-            src={'../images/close.svg'}
-            className='icon'
-            alt='image not found'
-            id='close'
-            onClick={this.props.closePhoto || this.props.closeMenu}
-          />
-        </div>
 
-        {this.props.idx !== null && (
+    return (
+      <div className={`photos-preview${isOpen ? '' : ' hidden'}`}>
+        <div className='image-container'>
+          {/* PREV BUTTON */}
           <div
-            className='icon arrow'
-            style={{ left: '3vw' }}
+            className='arrow prev'
             onClick={() => this.props.openPhoto(null, this.props.idx - 1)}>
-            {'<'}
+            <img
+              src='/images/icons/right-arrow.svg'
+              alt='previous'
+              className='icon'
+              style={{ transform: 'rotate(180deg)', filter: 'invert(1)' }}
+            />
           </div>
-        )}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            height: '80%',
-            width: '80%',
-            alignContent: 'center',
-          }}>
+
+          {/* PHOTO TO PREVIEW */}
           <img
+            alt='previewing'
             src={url}
-            id='large-photo'
-            className={this.props.isOpen ? '' : 'closed'}
+            className='image'
             ref={node => {
               this.node = node
             }}
           />
-        </div>
-        {this.props.idx !== null && (
+
+          {/* NEXT BUTTON */}
           <div
-            className='icon arrow'
-            style={{ right: '3vw' }}
+            className='arrow next'
             onClick={() => this.props.openPhoto(null, this.props.idx + 1)}>
-            {'>'}
+            <img
+              src='/images/icons/right-arrow.svg'
+              alt='next'
+              className='icon'
+              style={{ filter: 'invert(1)' }}
+            />
           </div>
-        )}
+        </div>
       </div>
     )
   }

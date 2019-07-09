@@ -9,15 +9,15 @@ class ProfilePicture extends Component {
     pathname: '/',
   }
 
-  urlListener = () => {
-    this.setState({
+  urlListener = async () => {
+    await this.setState({
       pathname: window.location.pathname,
     })
   }
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
     unlistenHistory = this.props.history.listen(this.urlListener)
-    this.urlListener()
+    await this.urlListener()
   }
 
   componentWillUnmount = () => {

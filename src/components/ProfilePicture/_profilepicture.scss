@@ -18,13 +18,11 @@
 
   height: 40vh;
   max-height: 450px;
-  // transition: max-height 0.5s, height 0.5s;
   transition: 0.5s;
 
   &.collapsed {
     height: 0;
     max-height: 0;
-    // transition: max-height 0.5s, height 0.5s;
     transition: 0.5s;
   }
 
@@ -39,7 +37,7 @@
 
 .profile-picture {
   background-color: rgba(0, 0, 0, 0);
-  background-image: url('/images/me00.jpg');
+  background-image: url('/images/me00s.jpg');
   background-position: 75%;
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -49,6 +47,7 @@
   transition: 0.5s;
 
   @media #{$mobile-width-m} {
+    background-image: url('/images/me00ss.jpg');
     @include heights-m;
   }
 

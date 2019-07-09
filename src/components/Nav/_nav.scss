@@ -14,9 +14,6 @@
   position: relative;
 
   & .title {
-    // font-family: 'Dosis', sans-serif;
-    // font-size: 1.5em;
-    // letter-spacing: 2px;
     margin: 0;
     border-bottom: none;
   }
@@ -81,11 +78,6 @@
 
     & > * {
       width: 100%;
-      border-bottom: 1px solid $border-color;
-
-      &:last-child {
-        border: none;
-      }
     }
 
     @media #{$mobile-width-m} {
@@ -96,16 +88,35 @@
       background-color: white;
 
       border-bottom: 1px solid $border-color1;
+
+      & > * {
+        border-bottom: 1px solid $border-color;
+
+        &:last-child {
+          border: none;
+        }
+      }
     }
   }
 
   &-link {
     background-color: inherit;
+
     border: none;
+
+    transition: border 0s, background-color 0.5s;
 
     &.selected {
       background-color: white;
-      border: 1px solid $border-color1;
+
+      border: 1.7px solid $border-color1;
+
+      transition: border 0s, background-color 0.5s;
+
+      @media #{$mobile-width-m} {
+        background-color: inherit;
+        border: none;
+      }
     }
 
     @media (hover: hover) {
