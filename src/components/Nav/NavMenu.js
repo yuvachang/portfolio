@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 class NavMenu extends Component {
   state = {
@@ -50,6 +50,7 @@ class NavMenu extends Component {
 
   render() {
     const { open } = this.state
+    const {location} = this.props
     return (
       <div className='nav-menu'>
         <div
@@ -59,7 +60,7 @@ class NavMenu extends Component {
             <Link to='/projects' onClick={() => this.toggleMenu('close')}>
               <div
                 className={`nav-link ${
-                  window.location.pathname === '/projects' ? 'selected' : ''
+                  location.pathname === '/projects' ? 'selected' : ''
                 }`}>
                 Projects
               </div>
@@ -67,7 +68,7 @@ class NavMenu extends Component {
             <Link to='/photography' onClick={() => this.toggleMenu('close')}>
               <div
                 className={`nav-link ${
-                  window.location.pathname === '/photography' ? 'selected' : ''
+                  location.pathname === '/photography' ? 'selected' : ''
                 }`}>
                 Photography
               </div>
@@ -75,7 +76,7 @@ class NavMenu extends Component {
             <Link to='/contact' onClick={() => this.toggleMenu('close')}>
               <div
                 className={`nav-link ${
-                  window.location.pathname === '/contact' ? 'selected' : ''
+                  location.pathname === '/contact' ? 'selected' : ''
                 }`}>
                 Contact
               </div>
@@ -94,4 +95,5 @@ class NavMenu extends Component {
   }
 }
 
-export default NavMenu
+// withRouter will trigger update/rerender with props.location
+export default withRouter(NavMenu)
