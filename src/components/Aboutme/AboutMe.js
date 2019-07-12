@@ -77,7 +77,7 @@ const AboutMe = () => {
       </div>
       <div className='about-header'>Why change?</div>
       <div className='about-body'>
-        Why leave architecture? I want to pursue more tangible and fair-market design in an increasingly digital world. My design thinking and perception of architecture will never leave me, but I wish to focus my skills in a different way more meaningful to myself.
+        Why leave architecture? I want to pursue more immediate and fair-market design in an increasingly digital world. I love making things physical and digital, and my design thinking and perception of architecture will never leave me. Currently, I wish to focus my skills in a way I feel more meaningful.
       </div>
     </div>
   )

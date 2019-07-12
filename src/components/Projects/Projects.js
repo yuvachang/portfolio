@@ -5,18 +5,23 @@ class Projects extends Component {
     return (
       <div className='projects'>
         <div className='title'>Projects</div>
+        {/* <div className='description'>These are some of my coding projects, both from school and personal. </div> */}
 
         <div className='proj-card'>
-          <img className='proj-image' alt='proj-screenshot' src='/images/projs/webpage_pic.png' />
+          <img
+            className='proj-image'
+            alt='proj-screenshot'
+            src='/images/projs/webpage_pic.png'
+          />
 
           <div className='proj-about'>
             <div className='proj-title'>My website</div>
             <div className='proj-techs'>React, GH Pages</div>
             <div className='proj-body'>
-              I wanted to write the code for my own site instead of using
-              templates and am using React and GitHub Pages for simple static
-              site hosting. It is a small project and makes adding photos or
-              projects later a simple task.
+              Written with React and GitHub Pages for simple static site
+              hosting. I wanted to write the code for my own site instead of
+              using a template. The small project makes adding data or updating
+              information later a simple task.
             </div>
             <div className='proj-links'>
               <a
@@ -33,7 +38,11 @@ class Projects extends Component {
         <hr />
 
         <div className='proj-card'>
-          <img className='proj-image' alt='proj-screenshot' src='/images/projs/split.png' />
+          <img
+            className='proj-image'
+            alt='proj-screenshot'
+            src='/images/projs/split.png'
+          />
 
           <div className='proj-about'>
             <div className='proj-title'>Split</div>
@@ -41,20 +50,23 @@ class Projects extends Component {
               React, Redux, Sass, Firebase/Firestore
             </div>
             <div className='proj-body'>
-              I took the idea of EZSplit and made a new app from scratch with
-              fewer libraries, more functionality, and Firebase as BaaS.
-              <br /> Costs and debts can be calculated by individual amounts
-              paid and bills are fairly distributed based on items ordered or
-              calculated from uneven cash payments.
+              Split is a mobile responsive web-app that allows itemizing
+              receipts and calculating individual debts for shared purchases
+              amongst groups. Users can edit a single receipt together using
+              Firestore listeners to add, delete, and edit items. User debts are
+              calculated based on either total spendings or by balancing uneven
+              cash payments.
               <br />
-              Live editing of receipts with groups of friends is achieved with
-              Firestore listeners, users are indexed and can be found and added,
-              and notifications and confirmations happen live through Firestore.
+              This is a personal project created from scratch using React, Redux
+              and Firebase as BaaS. Since the app is meant to be used outside or
+              in public locations, mobile responsiveness was very important,
+              along with deployability and zero operation cost in mind. My goal
+              was to produce a fully functional app that could be used by
+              friends and family.
               <br />
-              I may have been a little ambitious with the scale of the app, and
-              there are bugs and scaling issues to be determined and worked out.
-              <br />
-              Please give it a try and let me know what you think!
+              Features include: email and Google login, friend management with
+              live notifications, local and db data search, data
+              creation/deletion, live editing.
             </div>
             <div className='proj-links'>
               <a
@@ -62,7 +74,7 @@ class Projects extends Component {
                 rel='noopener noreferrer'
                 target='_blank'
                 className='button'>
-                Visit
+                Try it!
               </a>
               <a
                 href='https://github.com/yuvachang/Split'
@@ -74,11 +86,15 @@ class Projects extends Component {
             </div>
           </div>
         </div>
-        
+
         <hr />
 
         <div className='proj-card'>
-          <img className='proj-image' alt='proj-screenshot' src='/images/projs/ezsplit.PNG' />
+          <img
+            className='proj-image'
+            alt='proj-screenshot'
+            src='/images/projs/ezsplit.PNG'
+          />
 
           <div className='proj-about'>
             <div className='proj-title'>EZ-Split</div>
@@ -88,9 +104,9 @@ class Projects extends Component {
             </div>
             <div className='proj-body'>
               This is a 3-week MVP team project with Agile methods and built
-              using the MERN stack. It is a bill splitting app using an OCR api
-              to itemize receipts. Socket.io connections make editing items and
-              prices an interactive experience.
+              using the MERN stack. It uses an OCR api to itemize receipts and
+              manage costs-splitting. Socket.io connections make editing items
+              and prices an interactive experience.
               <br /> I learned a lot implementing Passport.js, sockets,
               Mongoose, and managing dataflow with Redux. The goal was to create
               a unique bill-splitting experience with friends.
@@ -113,11 +129,15 @@ class Projects extends Component {
             </div>
           </div>
         </div>
-        
+
         <hr />
 
         <div className='proj-card'>
-          <img className='proj-image' alt='proj-screenshot' src='/images/projs/ghb-c.jpg' />
+          <img
+            className='proj-image'
+            alt='proj-screenshot'
+            src='/images/projs/ghb-c.jpg'
+          />
 
           <div className='proj-about'>
             <div className='proj-title'>React Native GitHub Browser</div>
