@@ -60,24 +60,19 @@ const AboutMe = () => {
     <div className='home'>
       <div className='about-header'>Skills</div>
       <div className='about-body'>
-        Javascript, HTML, CSS, React, Redux, Express, Sequelize, Node.js, Git,
-        PSQL, SQL, NoSQL, MongoDb, Mongoose, Socket.io, Heroku, Webpack,
-        Rhino-3D, VRay, Adobe Suite {'('}Photoshop, Illustrator, Indesign{')'},
-        Autocad
+        Javascript, HTML, CSS, React, Redux, Express, Sequelize, Node.js, Git, PSQL, SQL, NoSQL, MongoDb, Mongoose, Socket.io, Heroku, Webpack,
+        Rhino-3D, VRay, Adobe Suite {'('}Photoshop, Illustrator, Indesign{')'}, Autocad
       </div>
       <div className='about-header'>Who am I?</div>
       <div className='about-body'>
-        I am a web developer recently graduated from Fullstack Academy boot camp
-        and have a former background in design and architecture. My skills at
-        the moment are centered around the Node.js environment and a React/Redux
-        frontend, and I have backend experience working with Express, PSQL,
-        MongoDB, and Firebase/Firestore. I am looking for work opportunities
-        where I can learn and develop more skills to continue pursuing my
-        passion for design and making.
+        I am a software engineer with a background in architecture and design. I recently graduated from a coding boot camp {'('}Fullstack Academy
+        {')'} and have skills in Javascript technologies across the stack. At the moment I am looking for work and opportunities to expand my skills
+        while pursuing my passion for design and making.
       </div>
-      <div className='about-header'>Why change?</div>
+      <div className='about-header'>What I enjoy</div>
       <div className='about-body'>
-        Why leave architecture? I want to pursue more immediate and fair-market design in an increasingly digital world. I love making things physical and digital, and my design thinking and perception of architecture will never leave me. Currently, I wish to focus my skills in a way I feel more meaningful.
+        I love making things, digital and physical. I enjoy designing and making furniture and am hoping one day will be able to own a full size CNC
+        machine. My other hobbies include building water cooled computers, sewing, photography... My curiosity for the material world drives me.
       </div>
     </div>
   )
