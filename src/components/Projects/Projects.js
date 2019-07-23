@@ -5,14 +5,13 @@ class Projects extends Component {
     return (
       <div className='projects'>
         <div className='title'>Projects</div>
-        {/* <div className='description'>These are some of my coding projects, both from school and personal. </div> */}
 
         <div className='proj-card'>
           <img className='proj-image' alt='proj-screenshot' src='/images/projs/minesweeper.png' />
 
           <div className='proj-about'>
             <div className='proj-title'>Minesweeper</div>
-            <div className='proj-techs'>Javascript, React, GH Pages</div>
+            <div className='proj-techs'>Javascript, React, Firebase/Firestore, GH Pages</div>
             <div className='proj-body'>
               I have loved Minesweeper since my first Windows computer and have recreated the game in React with fidelity in mind. I made sure to
               implement the dual mouse-click feature that allowed for speed playing.
@@ -20,10 +19,11 @@ class Projects extends Component {
               A minor improvement over the Microsoft original is the riskless first click, ensuring the first cell you click is never a mine and
               guarantees an opening cascade of cells. No more 0.2-second losses!
               <br />
+              I've also included a simple leaderboard showing top five scores using Firestore. 
               {/* Features: Set flags or '?'s with RMB, R+LMB opening of surrounding cells if neighboring flag-count matches neighboring mine-count, R+LMB
               highlights surrounding cells, opening cells with no surrounding mines opens itself and all surrounding cells recursively...
               <br /> */}
-              It's my favorite game. Please try it!
+              Please try it and see if you can beat my times!
             </div>
             <div className='proj-links'>
               <a href='https://yuvachang.github.io/minesweeper/' rel='noopener noreferrer' target='_blank' className='button'>
