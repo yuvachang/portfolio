@@ -383,6 +383,8 @@ button,
   font-size: 0.8em;
   letter-spacing: 0.5px;
   line-height: 22px; }
+  .proj-body br {
+    line-height: 2.5; }
 
 .proj-techs {
   color: #232323;
