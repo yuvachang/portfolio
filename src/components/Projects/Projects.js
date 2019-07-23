@@ -17,8 +17,8 @@ class Projects extends Component {
               I have loved Minesweeper since my first Windows computer and have recreated the game in React with fidelity in mind. I made sure to
               implement the dual mouse-click feature that allowed for speed playing.
               <br />
-              A minor improvement I added over the Microsoft original is the riskless first click, ensuring the first cell you click is never a mine
-              and guarantees an opening cascade of cells. No more 0.2-second losses!
+              A minor improvement over the Microsoft original is the riskless first click, ensuring the first cell you click is never a mine and
+              guarantees an opening cascade of cells. No more 0.2-second losses!
               <br />
               {/* Features: Set flags or '?'s with RMB, R+LMB opening of surrounding cells if neighboring flag-count matches neighboring mine-count, R+LMB
               highlights surrounding cells, opening cells with no surrounding mines opens itself and all surrounding cells recursively...
