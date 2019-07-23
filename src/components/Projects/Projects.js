@@ -19,14 +19,14 @@ class Projects extends Component {
               A minor improvement over the Microsoft original is the riskless first click, ensuring the first cell you click is never a mine and
               guarantees an opening cascade of cells. No more 0.2-second losses!
               <br />
-              I've also included a simple leaderboard showing top five scores using Firestore. 
+              I've also included a simple leaderboard showing top five scores using Firestore. Please try it and see if you can beat my times!
               {/* Features: Set flags or '?'s with RMB, R+LMB opening of surrounding cells if neighboring flag-count matches neighboring mine-count, R+LMB
               highlights surrounding cells, opening cells with no surrounding mines opens itself and all surrounding cells recursively...
               <br /> */}
-              Please try it and see if you can beat my times!
+              
             </div>
             <div className='proj-links'>
-              <a href='https://yuvachang.github.io/minesweeper/' rel='noopener noreferrer' target='_blank' className='button'>
+              <a href='https://minesweeper.yuvachang.com' rel='noopener noreferrer' target='_blank' className='button'>
                 Play!
               </a>
               <a href='https://github.com/yuvachang/minesweeper' rel='noopener noreferrer' target='_blank' className='button'>
