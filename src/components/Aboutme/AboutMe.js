@@ -60,19 +60,18 @@ const AboutMe = () => {
     <div className='home'>
       <div className='about-header'>Skills</div>
       <div className='about-body'>
-        Javascript, HTML, CSS, React, Redux, Express, Sequelize, Node.js, Git, PSQL, SQL, NoSQL, MongoDb, Mongoose, Socket.io, Heroku, Webpack,
-        Rhino-3D, VRay, Adobe Suite {'('}Photoshop, Illustrator, Indesign{')'}, Autocad
+        Javascript, HTML, CSS, React, Redux, Express, Sequelize, Node.js, Git, Firebase, Cloud Firestore, PostgreSQL, SQL, NoSQL, MongoDb, Mongoose, Socket.io, Heroku, Webpack,
+        Rhino-3D, VRay, Adobe {'('}Photoshop, Illustrator, Indesign{')'}, Autocad
       </div>
       <div className='about-header'>Who am I?</div>
       <div className='about-body'>
         I am a software engineer with a background in architecture and design. I recently graduated from a coding boot camp {'('}Fullstack Academy
-        {')'} and have skills in Javascript technologies across the stack. At the moment I am looking for work and opportunities to expand my skills
-        while pursuing my passion for design and making.
+        {')'} and have skills in Javascript technologies across the stack. Currently seeking work in New York City. 
       </div>
       <div className='about-header'>What I enjoy</div>
       <div className='about-body'>
         I love making things, digital and physical. I enjoy designing and making furniture and am hoping one day will be able to own a full size CNC
-        machine. My other hobbies include building water cooled computers, sewing, photography... My curiosity for the material world drives me.
+        machine. My other hobbies include building water cooled computers, sewing, photography... 
       </div>
     </div>
   )
