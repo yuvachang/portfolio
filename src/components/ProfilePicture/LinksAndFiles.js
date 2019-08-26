@@ -1,4 +1,9 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+
+const COUNTER_ID = 'entry.42553904'
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/13aRw7XO7iDj0ij0pzkBe59iTWXrRR-t3QduARH9jPoc/formResponse'
+const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
 
 class LinksAndFiles extends Component {
   state = {
@@ -17,148 +22,35 @@ class LinksAndFiles extends Component {
 
   componentWillUnmount = () => {}
 
+  resumeDLCounter = () => {
+    const formData = new FormData()
+    formData.append(COUNTER_ID, 'someone viewed your resume')
+    axios
+      .post(CORS_PROXY + GOOGLE_FORM_URL, formData)
+      .catch(error => {
+        console.error(error)
+      })
+  }
+
   render() {
-    // const { currentMedia, href } = this.state
     return (
       <div className='links-and-files'>
-        {/* <div className='media-icons'>
-          <img
-            src='../images/issuu-logo.png'
-            className={`icon ${
-              currentMedia.includes('ISSUU') ? 'selected' : ''
-            }`}
-            onClick={() =>
-              this.selectMedia(
-                'ISSUU design portfolio',
-                'https://issuu.com/skwrl/docs/pportfolio'
-              )
-            }
-          />
-          <img
-            src='../images/document-logo.svg'
-            className={`icon ${
-              currentMedia.includes('resume') ? 'selected' : ''
-            }`}
-            onClick={() =>
-              this.selectMedia('View resume', '../images/YuvaChangResume.pdf')
-            }
-          />
-          <img
-            src='../images/ghlogo.svg'
-            className={`icon ${
-              currentMedia.includes('GitHub') ? 'selected' : ''
-            }`}
-            onClick={() =>
-              this.selectMedia('View GitHub', 'https://github.com/yuvachang')
-            }
-          />
-          <img
-            src='../images/linkedin-logo.svg'
-            className={`icon ${
-              currentMedia.includes('LinkedIn') ? 'selected' : ''
-            }`}
-            onClick={() =>
-              this.selectMedia(
-                'LinkedIn',
-                'https://www.linkedin.com/in/yuvachang/'
-              )
-            }
-          />
-          <img
-            src='../images/instagram-logo.svg'
-            className={`icon ${
-              currentMedia.includes('Instagram') ? 'selected' : ''
-            }`}
-            onClick={() =>
-              this.selectMedia(
-                'Instagram',
-                'https://www.instagram.com/mrskwrl/'
-              )
-            }
-          />
-        </div>
-
-        <a
-          className='button'
-          href={href}
-          target='_blank'
-          style={{ fontSize: '0.9em' }}>
-          {currentMedia}
-        </a> */}
-
-        {/* <a className='button'>
-          <img src='../images/document-logo.svg' className='icon' />
-          <div className='button-message'>resume</div>
-        </a>
-        <a className='button'>
-          <img src='../images/ghlogo.svg' className='icon' />
-          <div className='button-message'>github</div>
-        </a>
-        <a className='button'>
-          <img src='../images/linkedin-logo.svg' className='icon' />
-          <div className='button-message'>linkedin</div>
-        </a>
-        <a className='button'>
-          <img src='../images/instagram-logo.svg' className='icon' />
-          <div className='button-message'>instagram</div>
-        </a>
-        <a className='button'>
-          <img src='../images/issuu-logo.png' className='icon' />
-          <div className='button-message'>ISSUU portfolio</div>
-        </a> */}
         <div className='media-icons'>
-          <a
-            href='https://github.com/yuvachang'
-            rel='noopener noreferrer'
-            target='_blank'
-            title='Github'>
-            <img
-              src='../images/icons/ghlogo.svg'
-              alt='github'
-              className='icon'
-            />
+          <a href='https://github.com/yuvachang' rel='noopener noreferrer' target='_blank' title='Github'>
+            <img src='../images/icons/ghlogo.svg' alt='github' className='icon' />
           </a>
-          <a
-            href='https://www.linkedin.com/in/yuvachang/'
-            rel='noopener noreferrer'
-            target='_blank'
-            title='LinkedIn'>
-            <img
-              src='../images/icons/linkedin-logo.svg'
-              alt='linkedin'
-              className='icon'
-            />
+          <a href='https://www.linkedin.com/in/yuvachang/' rel='noopener noreferrer' target='_blank' title='LinkedIn'>
+            <img src='../images/icons/linkedin-logo.svg' alt='linkedin' className='icon' />
           </a>
-          <a
-            href='https://issuu.com/skwrl/docs/pportfolio'
-            rel='noopener noreferrer'
-            target='_blank'
-            title='ISSUU portfolio'>
-            <img
-              src='../images/icons/issuu-logo.png'
-              alt='issuu'
-              className='icon'
-              style={{ width: '21px', height: '21px' }}
-            />
+          <a href='https://issuu.com/skwrl/docs/pportfolio' rel='noopener noreferrer' target='_blank' title='ISSUU portfolio'>
+            <img src='../images/icons/issuu-logo.png' alt='issuu' className='icon' style={{ width: '21px', height: '21px' }} />
           </a>
-          <a
-            href='https://www.instagram.com/mrskwrl/'
-            rel='noopener noreferrer'
-            target='_blank'
-            title='Instagram'>
-            <img
-              src='../images/icons/instagram-logo.svg'
-              alt='instagram'
-              className='icon'
-            />
+          <a href='https://www.instagram.com/mrskwrl/' rel='noopener noreferrer' target='_blank' title='Instagram'>
+            <img src='../images/icons/instagram-logo.svg' alt='instagram' className='icon' />
           </a>
         </div>
-        <a
-          className='button'
-          href='../images/YuvaChangResume.pdf'
-          rel='noopener noreferrer'
-          target='_blank'>
-          resume
+        <a className='button' href='../images/YuvaChangResume.pdf' rel='noopener noreferrer' target='_blank' onClick={this.resumeDLCounter}>
+          resume 
         </a>
       </div>
     )

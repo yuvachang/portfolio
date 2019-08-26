@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {withRouter} from 'react-router-dom'
 import Nav from './Nav/Nav'
 import Routes from './Routes'
 import ProfilePicture from './ProfilePicture/ProfilePicture'
@@ -15,19 +16,27 @@ class App extends Component {
 
   scrollFunc = e => {
     if (window.location.pathname === '/') return
-    if (this.photosPage.scrollTop > 150 && !this.state.showBackToTop) {
+    if (this.routes.scrollTop > 150 && !this.state.showBackToTop) {
       this.setState({
         showBackToTop: true,
       })
-    } else if (this.photosPage.scrollTop <= 150 && this.state.showBackToTop) {
+    } else if (this.routes.scrollTop <= 150 && this.state.showBackToTop) {
       this.setState({
         showBackToTop: false,
       })
     }
   }
 
+  scrollToTop = () => {
+    this.routes.scrollTo(0, 0)
+  }
+
   componentDidMount = () => {
-    this.photosPage.addEventListener('scroll', e => this.scrollFunc(e))
+    this.routes.addEventListener('scroll', e => this.scrollFunc(e))
+    this.unlistenHistory = this.props.history.listen((loc, action)=> {
+      console.log('location changed')
+      this.scrollToTop()
+    })
 
     // Use Google Forms to log visit to site.
     const formData = new FormData()
@@ -51,7 +60,7 @@ class App extends Component {
   }
 
   componentWillUnmount = () => {
-    this.photosPage.removeEventListener('scroll', e => this.scrollFunc(e))
+    this.routes.removeEventListener('scroll', e => this.scrollFunc(e))
   }
 
   render() {
@@ -60,14 +69,14 @@ class App extends Component {
       <div className='app'>
         <Nav />
         <ProfilePicture />
-        <div id='routes' ref={node => (this.photosPage = node)}>
+        <div id='routes' ref={node => (this.routes = node)}>
           <Routes className={window.location.pathname === '/' ? 'home' : ''} />
         </div>
         <div className={`back-to-top ${showBackToTop ? '' : 'hidden'}`}>
           <div
             className='alink'
             onClick={() => {
-              this.photosPage.scroll({ top: 0, left: 0, behavior: 'smooth' })
+              this.routes.scroll({ top: 0, left: 0, behavior: 'smooth' })
             }}>
             Back to top
           </div>
@@ -77,4 +86,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default withRouter(App)
