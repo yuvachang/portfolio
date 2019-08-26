@@ -21,7 +21,10 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "scss": "node-sass --watch \"./MainSass.scss\" --output \"./public/\" "
+    "scss": "node-sass --watch \"./MainSass.scss\" --output \"./public/\" ",
+    "gitcommit": "git add -A && git commit -m",
+    "gitpush": "git push origin master",
+    "git404": "git checkout -b gh-pages && git add . && git commit -m 'add 404 and cname' && git push origin gh-pages && git checkout master && git branch -D gh-pages"
   },
   "eslintConfig": {
     "extends": "react-app"
