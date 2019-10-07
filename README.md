@@ -1,3 +1,3 @@
-This is my personal site, built using React, Sass, and HTML.  
-Hosted from here using GH pages and linked to my Google domain.  
+Portfolio page built using React, Sass, and HTML.  
+Deployed with GH pages.  
 Thanks for looking!
