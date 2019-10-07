@@ -10,8 +10,12 @@
 
   padding: 0 10vw;
   
-  height: fit-content;
+  height: inherit;
   width: 100%;
+
+  @media only screen and (max-height: 630px) {
+    height: fit-content;
+  }
 }
 
 .about {
