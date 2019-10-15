@@ -7,29 +7,38 @@ class Projects extends Component {
         <div className='title'>Projects</div>
 
         <div className='proj-card'>
-          <img className='proj-image' alt='proj-screenshot' src='/images/projs/minesweeper.png' />
+          <div className='proj-image-container'>
+            <img className='proj-image' alt='proj-screenshot' src='/images/projs/minesweeper.png' />
+          </div>
 
           <div className='proj-about'>
             <div className='proj-title'>Minesweeper</div>
-            <div className='proj-techs'>Javascript, React, Firebase/Firestore, GH Pages</div>
+            <div className='proj-techs'>React, Firebase, Cloud Firestore, Node.js</div>
             <div className='proj-body'>
-              I have loved Minesweeper since my first Windows computer and have recreated the game in React with fidelity in mind. I made sure to
-              implement the dual mouse-click feature that allowed for speed playing.
+              Online Minesweeper game replicating the Microsoft original with 3 levels of difficulty
+              and a live leaderboard database in Cloud Firestore.
               <br />
-              A minor improvement over the Microsoft original is the riskless first click, ensuring the first cell you click is never a mine and
-              guarantees an opening cascade of cells. No more 0.2-second losses!
+              • Firestore database and endpoints for storing and displaying top scores with listener
+              for leaderboard that updates as online players win.
               <br />
-              I've also included a simple leaderboard showing top five scores using Firestore. Please try it and see if you can beat my times!
-              {/* Features: Set flags or '?'s with RMB, R+LMB opening of surrounding cells if neighboring flag-count matches neighboring mine-count, R+LMB
-              highlights surrounding cells, opening cells with no surrounding mines opens itself and all surrounding cells recursively...
-              <br /> */}
-              
+              • React.js for game state and window event listeners to track mouse R+L clicks for
+              setting flags and opening cells.
+              <br />• Recursive cascading of empty cells and cell-checking logic ensures smooth
+              gameplay and prevents first-click losses.
             </div>
             <div className='proj-links'>
-              <a href='https://minesweeper.yuvachang.com' rel='noopener noreferrer' target='_blank' className='button'>
+              <a
+                href='https://minesweeper.yuvachang.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='button'>
                 Play!
               </a>
-              <a href='https://github.com/yuvachang/minesweeper' rel='noopener noreferrer' target='_blank' className='button'>
+              <a
+                href='https://github.com/yuvachang/minesweeper'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='button'>
                 GitHub
               </a>
             </div>
@@ -37,17 +46,22 @@ class Projects extends Component {
         </div>
 
         <div className='proj-card'>
-          <img className='proj-image' alt='proj-screenshot' src='/images/projs/webpage_pic.png' />
+          <div className='proj-image-container'>
+            <img className='proj-image' alt='proj-screenshot' src='/images/projs/webpage_pic.png' />
+          </div>
 
           <div className='proj-about'>
             <div className='proj-title'>My website</div>
-            <div className='proj-techs'>React, GH Pages</div>
+            <div className='proj-techs'>React.js, Node.js, GH Pages</div>
             <div className='proj-body'>
-              Written with React and GitHub Pages for simple static site hosting. I wanted to write the code for my own site instead of using a
-              template. The small project makes adding data or updating information later a simple task.
+              Personal portfolio page. Built with React.js frontend and hosted on GitHub Pages. Styled and mobile responsive with SASS.
             </div>
             <div className='proj-links'>
-              <a href='https://github.com/yuvachang/portfolio' rel='noopener noreferrer' target='_blank' className='button'>
+              <a
+                href='https://github.com/yuvachang/portfolio'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='button'>
                 GitHub
               </a>
             </div>
@@ -57,28 +71,40 @@ class Projects extends Component {
         <hr />
 
         <div className='proj-card'>
-          <img className='proj-image' alt='proj-screenshot' src='/images/projs/split.png' />
+          <div className='proj-image-container'>
+            <img className='proj-image' alt='proj-screenshot' src='/images/projs/split.png' />
+          </div>
 
           <div className='proj-about'>
             <div className='proj-title'>Split</div>
-            <div className='proj-techs'>React, Redux, Sass, Firebase/Firestore</div>
+            <div className='proj-techs'>React.js, Redux, Firebase, Cloud Firestore, Node.js</div>
             <div className='proj-body'>
-              Split is a mobile responsive web-app that allows itemizing receipts and calculating individual debts for shared purchases amongst
-              groups. Users can edit a single receipt together using Firestore listeners to add, delete, and edit items. User debts are calculated
-              based on either total spendings or by balancing uneven cash payments.
+              Expense management SPA with Firebase BaaS. Users track individual or group spendings
+              and itemize costs.
               <br />
-              This is a personal project created from scratch using React, Redux and Firebase as BaaS. Since the app is meant to be used outside or in
-              public locations, mobile responsiveness was very important, along with deployability and zero operation cost in mind. My goal was to
-              produce a fully functional app that could be used by friends and family.
+              • Firebase OAuth, login with email or Google account. Deployed through Firebase
+              Hosting.
               <br />
-              Features include: email and Google login, friend management with live notifications, local and db data search, data creation/deletion,
-              live editing.
+              • Implemented Firestore database querying, notifications and data management with
+              redux-thunk middleware, and multi-user live editing of expense items with Firestore
+              listeners.
+              <br />
+              • Mobile responsiveness and styling done with SASS and media query breakpoints.
+              <br />
             </div>
             <div className='proj-links'>
-              <a href='https://split.yuvachang.com' rel='noopener noreferrer' target='_blank' className='button'>
+              <a
+                href='https://split.yuvachang.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='button'>
                 Try it!
               </a>
-              <a href='https://github.com/yuvachang/Split' rel='noopener noreferrer' target='_blank' className='button'>
+              <a
+                href='https://github.com/yuvachang/Split'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='button'>
                 GitHub
               </a>
             </div>
@@ -88,22 +114,43 @@ class Projects extends Component {
         <hr />
 
         <div className='proj-card'>
-          <img className='proj-image' alt='proj-screenshot' src='/images/projs/ezsplit.PNG' />
+          <div className='proj-image-container'>
+            <img className='proj-image' alt='proj-screenshot' src='/images/projs/ezsplit.PNG' />
+          </div>
 
           <div className='proj-about'>
             <div className='proj-title'>EZ-Split</div>
-            <div className='proj-techs'>React, Redux, Socket.io, MongoDB, Mongoose, Express, Passport, TAGGUN</div>
-            <div className='proj-body'>
-              This is a 3-week MVP team project with Agile methods and built using the MERN stack. It uses an OCR api to itemize receipts and manage
-              costs-splitting. Socket.io connections make editing items and prices an interactive experience.
-              <br /> I learned a lot implementing Passport.js, sockets, Mongoose, and managing dataflow with Redux. The goal was to create a unique
-              bill-splitting experience with friends.
+            <div className='proj-techs'>
+              React.js, Redux, Node.js, Express, Socket.IO, Sequelize, PSQL, Mongoose, MongoDB,
+              Passport, Heroku
             </div>
+            <div className='proj-body'>
+              A full stack web app (capstone) using web sockets and an OCR API to upload and itemize
+              receipts. Users collaborate to itemize and split a shared bill.
+              <br />
+              • Set up and implemented Socket.IO for pub/sub updates of receipt item changes.
+              <br />
+              • Created React.js components for displaying and multi-user editing of receipt items with
+              immutable state through Redux.
+              <br />
+              • Integrated (Taggun) OCR API and Restful API endpoints for JSON data.
+              <br />• Created MongoDB schemas and queries for image and user data in Javascript
+              using Mongoose ODM.
+            </div>
+
             <div className='proj-links'>
-              <a href='https://ezsplit.herokuapp.com' rel='noopener noreferrer' target='_blank' className='button'>
+              <a
+                href='https://ezsplit.herokuapp.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='button'>
                 Visit
               </a>
-              <a href='https://github.com/EZSplit/EZSplit' rel='noopener noreferrer' target='_blank' className='button'>
+              <a
+                href='https://github.com/EZSplit/EZSplit'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='button'>
                 GitHub
               </a>
             </div>
@@ -113,18 +160,23 @@ class Projects extends Component {
         <hr />
 
         <div className='proj-card'>
-          <img className='proj-image' alt='proj-screenshot' src='/images/projs/ghb-c.jpg' />
+          <div className='proj-image-container'>
+            <img className='proj-image' alt='proj-screenshot' src='/images/projs/ghb-c.jpg' />
+          </div>
 
           <div className='proj-about'>
             <div className='proj-title'>React Native GitHub Browser</div>
-            <div className='proj-techs'>React Native, Redux, Android Studio</div>
+            <div className='proj-techs'>React Native, Redux, Node.js, Android Studio</div>
             <div className='proj-body'>
-              I wanted to learn React Native and spent a 4 day hackathon creating a basic GitHub app. I used basic email authentication for logging
-              in, and focused on smooth user navigation using React Native Navigation to fetch and display repository data. I learned a lot about the
-              native history stack and user flow.
+              Browse GitHub user repositories on Android. 4 day stackathon, basic email
+              authentication and React Native Navigation for user flow.
             </div>
             <div className='proj-links'>
-              <a href='https://youtu.be/GURAjh7Iw2A' rel='noopener noreferrer' target='_blank' className='button'>
+              <a
+                href='https://youtu.be/GURAjh7Iw2A'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='button'>
                 Video demo
               </a>
               <a

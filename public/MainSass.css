@@ -12,6 +12,7 @@
     overflow-x: hidden;
     flex: 1;
     display: flex;
+    justify-content: center;
     background-color: white; }
     @media only screen and (min-width: 600px) {
       .app #routes > * {
@@ -94,12 +95,16 @@ button,
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 25px;
+  height: 28px;
   text-align: center;
   z-index: 99;
   background-color: white;
   opacity: 1;
   transition: height 0.3s, opacity 0.3s 0.3s; }
+  .back-to-top .alink {
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 0.85em; }
   .back-to-top.hidden {
     opacity: 0;
     height: 0;
@@ -361,15 +366,23 @@ button,
 .proj-card {
   display: flex;
   width: 100%;
+  max-width: 1000px;
   margin: 25px 0;
   height: auto; }
 
 .proj-image {
-  box-sizing: border-box;
+  width: 100%;
   object-fit: contain;
-  border: 1px solid #e0e0e0;
-  padding: 4px;
-  width: 40%; }
+  box-sizing: border-box;
+  padding: 4px; }
+  .proj-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    min-width: 40%;
+    overflow: hidden;
+    border: 1px solid #e0e0e0; }
 
 .proj-about {
   display: flex;
@@ -411,11 +424,19 @@ button,
   .proj-card {
     display: block; }
   .proj-image {
-    width: 100%; }
+    width: 75%; }
+    .proj-image-container {
+      width: 100%; }
   .proj-about {
     margin-left: 0; }
-  .proj-title, .proj-techs, .proj-body {
+  .proj-title {
     text-align: center; }
+  .proj-body {
+    text-align: justify;
+    text-justify: distribute; }
+  .proj-techs {
+    text-align: center;
+    font-weight: bolder; }
   .proj-links {
     justify-content: center; } }
 
@@ -428,6 +449,7 @@ button,
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 1300px;
     height: 100%; }
     @media only screen and (min-width: 600px) {
       .photos-container .title {
