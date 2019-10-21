@@ -5,14 +5,10 @@ import LinksAndFiles from './LinksAndFiles'
 let unlistenHistory
 
 class ProfilePicture extends Component {
-  state = {
-    pathname: '/',
-  }
+  state = { pathname: '/' }
 
   urlListener = async () => {
-    await this.setState({
-      pathname: window.location.pathname,
-    })
+    await this.setState({ pathname: window.location.pathname })
   }
 
   componentDidMount = async () => {
@@ -29,7 +25,7 @@ class ProfilePicture extends Component {
     return (
       <div
         id='profile-pic-container'
-        className={pathname !== '/' ? 'collapsed' : ''}>
+        className={pathname !== '/' || this.props.hidePicture ? 'collapsed' : ''}>
         <div className='profile-picture' />
         <LinksAndFiles />
       </div>

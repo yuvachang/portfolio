@@ -10,7 +10,8 @@
 
   padding: 0 10vw;
   
-  height: inherit;
+  min-height: max-content;
+
   width: 100%;
 
   @media only screen and (max-height: 630px) {
@@ -36,7 +37,7 @@
 
     font-size: 0.9em;
 
-    text-align: center;
+    // text-align: center;
 
     line-height: 20px;
 

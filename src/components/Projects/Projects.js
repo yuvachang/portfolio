@@ -8,6 +8,39 @@ class Projects extends Component {
 
         <div className='proj-card'>
           <div className='proj-image-container'>
+            <img className='proj-image' alt='proj-screenshot' src='/images/projs/divvi.png' />
+          </div>
+
+          <div className='proj-about'>
+            <div className='proj-title'>Divvi</div>
+            <div className='proj-techs'>Typescript, React, Redux, Node.js</div>
+            <div className='proj-body'>
+              Web application for dividing a dinner bill and helping users know who and how much to
+              pay for their portion.
+              {/* <br/>
+• Created front end architecture and UI. */}
+            </div>
+            <div className='proj-links'>
+              <a
+                href='https://div.yuvachang.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='button'>
+                Visit
+              </a>
+              <a
+                href='https://github.com/yuvachang/div'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='button'>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className='proj-card'>
+          <div className='proj-image-container'>
             <img className='proj-image' alt='proj-screenshot' src='/images/projs/minesweeper.png' />
           </div>
 
@@ -18,13 +51,13 @@ class Projects extends Component {
               Online Minesweeper game replicating the Microsoft original with 3 levels of difficulty
               and a live leaderboard database in Cloud Firestore.
               <br />
-              • Firestore database and endpoints for storing and displaying top scores with listener
+              {/* • Firestore database and endpoints for storing and displaying top scores with listener
               for leaderboard that updates as online players win.
               <br />
               • React.js for game state and window event listeners to track mouse R+L clicks for
               setting flags and opening cells.
               <br />• Recursive cascading of empty cells and cell-checking logic ensures smooth
-              gameplay and prevents first-click losses.
+              gameplay and prevents first-click losses. */}
             </div>
             <div className='proj-links'>
               <a
@@ -45,7 +78,7 @@ class Projects extends Component {
           </div>
         </div>
 
-        <div className='proj-card'>
+        {/* <div className='proj-card'>
           <div className='proj-image-container'>
             <img className='proj-image' alt='proj-screenshot' src='/images/projs/webpage_pic.png' />
           </div>
@@ -66,7 +99,7 @@ class Projects extends Component {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <hr />
 
@@ -79,7 +112,7 @@ class Projects extends Component {
             <div className='proj-title'>Split</div>
             <div className='proj-techs'>React.js, Redux, Firebase, Cloud Firestore, Node.js</div>
             <div className='proj-body'>
-              Expense management SPA with Firebase BaaS. Users track individual or group spendings
+              {/* Expense management SPA with Firebase BaaS. Users track individual or group spendings
               and itemize costs.
               <br />
               • Firebase OAuth, login with email or Google account. Deployed through Firebase
@@ -90,7 +123,14 @@ class Projects extends Component {
               listeners.
               <br />
               • Mobile responsiveness and styling done with SASS and media query breakpoints.
+              <br /> */}
+              Expense management app with Firebase BaaS and React. Users track individual or group
+              spendings and itemize costs.
               <br />
+              • Used Firebase api and services for OAuth logins and database and project hosting.
+              <br />
+              • Managed front end data with Redux and styled towards mobile responsiveness
+              with SASS.
             </div>
             <div className='proj-links'>
               <a
@@ -98,7 +138,7 @@ class Projects extends Component {
                 rel='noopener noreferrer'
                 target='_blank'
                 className='button'>
-                Try it!
+                Visit
               </a>
               <a
                 href='https://github.com/yuvachang/Split'
@@ -125,17 +165,28 @@ class Projects extends Component {
               Passport, Heroku
             </div>
             <div className='proj-body'>
-              A full stack web app (capstone) using web sockets and an OCR API to upload and itemize
+              {/* A full stack web app (capstone) using web sockets and an OCR API to upload and itemize
               receipts. Users collaborate to itemize and split a shared bill.
               <br />
               • Set up and implemented Socket.IO for pub/sub updates of receipt item changes.
               <br />
-              • Created React.js components for displaying and multi-user editing of receipt items with
-              immutable state through Redux.
+              • Created React.js components for displaying and multi-user editing of receipt items
+              with immutable state through Redux.
               <br />
               • Integrated (Taggun) OCR API and Restful API endpoints for JSON data.
               <br />• Created MongoDB schemas and queries for image and user data in Javascript
-              using Mongoose ODM.
+              using Mongoose ODM.  */}
+              Full stack web app using sockets and OCR API to upload and itemize receipts. Users
+              collaborate to split a shared bill.
+              <br />
+              • Implemented websockets and coordinated front end components for multi-client
+              collaboration on receipt items.
+              <br />
+              • Headed the front end component-based execution of updating and handling client data.
+              <br />
+              • Integrated (Taggun) OCR API and RESTful endpoints for uploading and retrieval of
+              JSON data.
+              <br />• Planned and created database schemas and queries in the Express backend.
             </div>
 
             <div className='proj-links'>

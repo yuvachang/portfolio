@@ -13,6 +13,7 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    height: max-content;
     background-color: white; }
     @media only screen and (min-width: 600px) {
       .app #routes > * {
@@ -320,7 +321,7 @@ button,
   flex-direction: column;
   align-items: center;
   padding: 0 10vw;
-  height: inherit;
+  min-height: max-content;
   width: 100%; }
   @media only screen and (max-height: 630px) {
     .home {
@@ -338,7 +339,6 @@ button,
 .about-body {
   color: #656565;
   font-size: 0.9em;
-  text-align: center;
   line-height: 20px;
   max-width: 825px; }
   .about-body:after {
