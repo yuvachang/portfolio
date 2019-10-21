@@ -21,7 +21,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d build",
-    "CNAME": "git checkout gh-pages && git pull && git checkout master 404.html CNAME && git commit -m 'add 404 and cname' && git push && git checkout master",
+    "cname": "git checkout gh-pages && git pull && git checkout master 404.html CNAME && git commit -m 'add 404 and cname' && git push && git checkout master",
     "scss": "node-sass --watch \"./MainSass.scss\" --output \"./public/\" "
   },
   "eslintConfig": {
