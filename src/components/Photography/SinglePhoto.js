@@ -22,7 +22,7 @@ export default class SinglePhoto extends Component {
     const pUrl = photo
     const url =
       pUrl[pUrl.length - 5] === 'l'
-        ? pUrl.slice(0, -5).concat('h' + pUrl.slice(-4))
+        ? pUrl.slice(0, -5).concat('l' + pUrl.slice(-4)) //concat 'h' for mediumsize pic
         : pUrl
 
     return (

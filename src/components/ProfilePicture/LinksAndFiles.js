@@ -18,10 +18,6 @@ class LinksAndFiles extends Component {
     })
   }
 
-  componentDidMount = () => {}
-
-  componentWillUnmount = () => {}
-
   resumeDLCounter = () => {
     const formData = new FormData()
     formData.append(COUNTER_ID, 'someone viewed your resume')

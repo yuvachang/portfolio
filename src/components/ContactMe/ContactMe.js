@@ -102,15 +102,15 @@ export default class ContactMe extends Component {
     return (
       <div className='contact-container'>
         <div className={`contact-me ${sent ? 'hidden' : ''}`}>
-          <div className='title'>Email me</div>
-          <div className='text'>
+          <div className='title'>Contact</div>
+          {/* <div className='text'>
             at{' '}
             <a href='mailto: hello@yuvachang.com' target='_top'>
               hello@yuvachang.com
             </a>
             , <br />
             or send me a message here!
-          </div>
+          </div> */}
           {error && (
             <div className='error-msg'>
               <br />
@@ -123,7 +123,7 @@ export default class ContactMe extends Component {
               type='email'
               name='emailAddress'
               value={this.state.emailAddress}
-              placeholder='Email'
+              placeholder='Your email'
               onChange={this.handleChange}
             />
             <input
