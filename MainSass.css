@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   background-color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #232323;
   letter-spacing: 1px;
   display: flex;
@@ -243,7 +243,7 @@ button,
   border-bottom: 1px solid #ededed;
   overflow: hidden;
   height: 40vh;
-  max-height: 450px;
+  max-height: 225px;
   transition: 0.5s; }
   #profile-pic-container.collapsed {
     height: 0;
@@ -265,7 +265,7 @@ button,
   background-size: auto 100%;
   background-repeat: no-repeat;
   height: 40vh;
-  max-height: 450px;
+  max-height: 250px;
   transition: 0.5s; }
   @media only screen and (max-width: 600px) {
     .profile-picture {
@@ -330,7 +330,6 @@ button,
 .about-header {
   text-transform: uppercase;
   font-family: 'Dosis', sans-serif;
-  font-size: 1.15em;
   letter-spacing: 2px;
   margin: 10px 0;
   width: 100%;
@@ -495,19 +494,24 @@ button,
       justify-content: center;
       align-items: center;
       height: 100%;
+      max-height: 500px;
       width: 5%;
       background-color: rgba(0, 0, 0, 0); }
       .photos-preview .arrow.next {
+        border-radius: 8px;
+        padding: 10px 0;
         right: -6%; }
       .photos-preview .arrow.prev {
+        border-radius: 8px;
+        padding: 10px 0;
         left: -6%; }
       @media (hover: hover) {
         .photos-preview .arrow:hover {
           cursor: pointer;
-          background-color: rgba(222, 222, 222, 0.2);
-          transition: 0.3s; } }
+          background-color: rgba(222, 222, 222, 0.2); } }
       .photos-preview .arrow:active {
-        background-color: rgba(222, 222, 222, 0.4); }
+        background-color: rgba(222, 222, 222, 0.4);
+        transition: 0s; }
       @media only screen and (max-width: 600px) {
         .photos-preview .arrow {
           height: 5%;
@@ -597,6 +601,7 @@ form {
 
 input,
 textarea {
+  font-family: "Open Sans", sans-serif;
   border: 1px solid #e0e0e0;
   padding: 4px;
   margin: 4px 0;
